@@ -1,0 +1,1621 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title></title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Vue-js</a></li><li class="chapter-item expanded "><a href="01_getting-started/index.html"><strong aria-hidden="true">1.</strong> Getting Started with Vue.js 3</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01_getting-started/01_introduction.html"><strong aria-hidden="true">1.1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="01_getting-started/02_vue-directives.html"><strong aria-hidden="true">1.2.</strong> Vue Directives</a></li><li class="chapter-item expanded "><a href="01_getting-started/03_virtual-dom-in-vue.html"><strong aria-hidden="true">1.3.</strong> Virtual DOM in Vue</a></li><li class="chapter-item expanded "><a href="01_getting-started/04_spa-vs-mpa.html"><strong aria-hidden="true">1.4.</strong> SPA vs MPA in Vue.js</a></li><li class="chapter-item expanded "><a href="01_getting-started/05_setup-with-vue-cli-vite.html"><strong aria-hidden="true">1.5.</strong> Setup with Vue CLI and Vite</a></li><li class="chapter-item expanded "><a href="01_getting-started/06_installation.html"><strong aria-hidden="true">1.6.</strong> Installation</a></li><li class="chapter-item expanded "><a href="01_getting-started/07_project-structure.html"><strong aria-hidden="true">1.7.</strong> Project Structure</a></li><li class="chapter-item expanded "><a href="01_getting-started/08_task.html"><strong aria-hidden="true">1.8.</strong> Task - SPA</a></li><li class="chapter-item expanded "><a href="01_getting-started/09_task.html"><strong aria-hidden="true">1.9.</strong> Task - MPA</a></li></ol></li><li class="chapter-item expanded "><a href="02_understanding-components/index.html"><strong aria-hidden="true">2.</strong> Understanding Components</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02_understanding-components/01_single-file-components.html"><strong aria-hidden="true">2.1.</strong> Single File Components (SFCs)</a></li><li class="chapter-item expanded "><a href="02_understanding-components/02_component-registration.html"><strong aria-hidden="true">2.2.</strong> Component Registration</a></li><li class="chapter-item expanded "><a href="02_understanding-components/03_template-syntax-interpolation.html"><strong aria-hidden="true">2.3.</strong> Template Syntax and Interpolation</a></li><li class="chapter-item expanded "><a href="02_understanding-components/04_embedding-js-expressions.html"><strong aria-hidden="true">2.4.</strong> Embedding JavaScript Expressions</a></li><li class="chapter-item expanded "><a href="02_understanding-components/05_template-vs-jsx.html"><strong aria-hidden="true">2.5.</strong> Template vs JSX in Vue</a></li><li class="chapter-item expanded "><a href="02_understanding-components/06_task.html"><strong aria-hidden="true">2.6.</strong> Task</a></li></ol></li><li class="chapter-item expanded "><a href="03_using-props/index.html"><strong aria-hidden="true">3.</strong> Using Props in Components</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03_using-props/01_props-in-vue.html"><strong aria-hidden="true">3.1.</strong> Props in Vue</a></li><li class="chapter-item expanded "><a href="03_using-props/02_validating-props.html"><strong aria-hidden="true">3.2.</strong> Validating Props</a></li><li class="chapter-item expanded "><a href="03_using-props/03_task.html"><strong aria-hidden="true">3.3.</strong> Task</a></li></ol></li><li class="chapter-item expanded "><a href="04_styling-media/index.html"><strong aria-hidden="true">4.</strong> Styling and Media in Vue.js</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="04_styling-media/01_integrating-tailwind.html"><strong aria-hidden="true">4.1.</strong> Integrating Tailwind with Vue.js (Vite)</a></li><li class="chapter-item expanded "><a href="04_styling-media/02_working-with-images.html"><strong aria-hidden="true">4.2.</strong> Working with Images in Vue Components</a></li><li class="chapter-item expanded "><a href="04_styling-media/03_using-svg-icons.html"><strong aria-hidden="true">4.3.</strong> Using Vue SVG Icons</a></li><li class="chapter-item expanded "><a href="04_styling-media/04_task.html"><strong aria-hidden="true">4.4.</strong> Task</a></li><li class="chapter-item expanded "><a href="04_styling-media/05_rendering-multiple-components.html"><strong aria-hidden="true">4.5.</strong> Rendering Multiple Components</a></li><li class="chapter-item expanded "><a href="04_styling-media/06_scoped-styles.html"><strong aria-hidden="true">4.6.</strong> Scoped Styles</a></li><li class="chapter-item expanded "><a href="04_styling-media/07_inline-styles.html"><strong aria-hidden="true">4.7.</strong> Inline Styles in Vue</a></li><li class="chapter-item expanded "><a href="04_styling-media/08_external-css-files.html"><strong aria-hidden="true">4.8.</strong> External CSS Files</a></li><li class="chapter-item expanded "><a href="04_styling-media/09_css-modules.html"><strong aria-hidden="true">4.9.</strong> CSS Modules in Vue.js</a></li><li class="chapter-item expanded "><a href="04_styling-media/10_vue-styling-libraries.html"><strong aria-hidden="true">4.10.</strong> Vue Styling Libraries</a></li><li class="chapter-item expanded "><a href="04_styling-media/11_task.html"><strong aria-hidden="true">4.11.</strong> Task</a></li></ol></li><li class="chapter-item expanded "><a href="05_composition-api/index.html"><strong aria-hidden="true">5.</strong> Introduction to Composition API</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="05_composition-api/01_composition-api-vs-options-api.html"><strong aria-hidden="true">5.1.</strong> Composition API vs. Options API</a></li><li class="chapter-item expanded "><a href="05_composition-api/02_ref-reactive.html"><strong aria-hidden="true">5.2.</strong> Reactive State with ref and reactive</a></li><li class="chapter-item expanded "><a href="05_composition-api/03_data-flow.html"><strong aria-hidden="true">5.3.</strong> Data Flow in Vue</a></li><li class="chapter-item expanded "><a href="05_composition-api/04_task.html"><strong aria-hidden="true">5.4.</strong> Task</a></li></ol></li><li class="chapter-item expanded "><a href="06_lifecycle-hooks/index.html"><strong aria-hidden="true">6.</strong> Working with Lifecycle Hooks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="06_lifecycle-hooks/01_lifecycle-hooks.html"><strong aria-hidden="true">6.1.</strong> Lifecycle Hooks</a></li><li class="chapter-item expanded "><a href="06_lifecycle-hooks/02_watch-watcheffect.html"><strong aria-hidden="true">6.2.</strong> Dependency Arrays with watch and watchEffect</a></li><li class="chapter-item expanded "><a href="06_lifecycle-hooks/03_cleaning-up-effects.html"><strong aria-hidden="true">6.3.</strong> Cleaning Up Effects</a></li><li class="chapter-item expanded "><a href="06_lifecycle-hooks/04_task.html"><strong aria-hidden="true">6.4.</strong> Task</a></li></ol></li><li class="chapter-item expanded "><a href="07_dynamic-rendering/index.html"><strong aria-hidden="true">7.</strong> Dynamic Rendering in Vue.js</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="07_dynamic-rendering/01_rendering-lists-v-for.html"><strong aria-hidden="true">7.1.</strong> Rendering Lists with v-for</a></li><li class="chapter-item expanded "><a href="07_dynamic-rendering/02_conditional-rendering.html"><strong aria-hidden="true">7.2.</strong> Conditional Rendering with v-if, v-else-if, v-else</a></li><li class="chapter-item expanded "><a href="07_dynamic-rendering/03_short-circuit-rendering.html"><strong aria-hidden="true">7.3.</strong> Short-Circuit Rendering</a></li><li class="chapter-item expanded "><a href="07_dynamic-rendering/04_if-else-pattern.html"><strong aria-hidden="true">7.4.</strong> If-Else Pattern in Vue</a></li><li class="chapter-item expanded "><a href="07_dynamic-rendering/05_task.html"><strong aria-hidden="true">7.5.</strong> Task</a></li></ol></li><li class="chapter-item expanded "><a href="08_forms/index.html"><strong aria-hidden="true">8.</strong> Controlled vs. Uncontrolled Forms in Vue</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="08_forms/01_handling-forms-v-model.html"><strong aria-hidden="true">8.1.</strong> Handling Forms with v-model</a></li><li class="chapter-item expanded "><a href="08_forms/02_event-handling.html"><strong aria-hidden="true">8.2.</strong> Event Handling</a></li><li class="chapter-item expanded "><a href="08_forms/03_accessing-event-arguments.html"><strong aria-hidden="true">8.3.</strong> Accessing Event Arguments</a></li><li class="chapter-item expanded "><a href="08_forms/04_handling-intensive-events.html"><strong aria-hidden="true">8.4.</strong> Handling Intensive Events</a></li><li class="chapter-item expanded "><a href="08_forms/05_task.html"><strong aria-hidden="true">8.5.</strong> Task</a></li></ol></li><li class="chapter-item expanded "><a href="09_vue-router/index.html"><strong aria-hidden="true">9.</strong> Routing in Vue.js (Vue Router)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="09_vue-router/01_vue-router-overview.html"><strong aria-hidden="true">9.1.</strong> Vue Router Overview</a></li><li class="chapter-item expanded "><a href="09_vue-router/02_setting-up-vue-router.html"><strong aria-hidden="true">9.2.</strong> Setting up Vue Router</a></li><li class="chapter-item expanded "><a href="09_vue-router/03_vue-router-basics.html"><strong aria-hidden="true">9.3.</strong> Vue Router Basics</a></li><li class="chapter-item expanded "><a href="09_vue-router/04_internal-external-navigation.html"><strong aria-hidden="true">9.4.</strong> Internal and External Navigation</a></li><li class="chapter-item expanded "><a href="09_vue-router/05_task.html"><strong aria-hidden="true">9.5.</strong> Task</a></li></ol></li><li class="chapter-item expanded "><a href="10_class-vs-functional/index.html"><strong aria-hidden="true">10.</strong> Class-based vs. Functional Components in Vue</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="10_class-vs-functional/01_functional-components.html"><strong aria-hidden="true">10.1.</strong> Functional Components</a></li><li class="chapter-item expanded "><a href="10_class-vs-functional/02_component-constructor.html"><strong aria-hidden="true">10.2.</strong> Component Constructor</a></li><li class="chapter-item expanded "><a href="10_class-vs-functional/03_functional-vs-class-components.html"><strong aria-hidden="true">10.3.</strong> Functional vs Class Components</a></li><li class="chapter-item expanded "><a href="10_class-vs-functional/04_handling-props-class-components.html"><strong aria-hidden="true">10.4.</strong> Handling Props in Class Components</a></li><li class="chapter-item expanded "><a href="10_class-vs-functional/05_managing-state-class-components.html"><strong aria-hidden="true">10.5.</strong> Managing State in Class Components</a></li><li class="chapter-item expanded "><a href="10_class-vs-functional/06_task.html"><strong aria-hidden="true">10.6.</strong> Task</a></li></ol></li><li class="chapter-item expanded "><a href="11_lifecycle-state-management/index.html"><strong aria-hidden="true">11.</strong> Vue.js Lifecycle Hooks and Reactive State Management</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="11_lifecycle-state-management/01_vue-lifecycle-hooks.html"><strong aria-hidden="true">11.1.</strong> Vue Lifecycle Hooks</a></li><li class="chapter-item expanded "><a href="11_lifecycle-state-management/02_reactive-state-updates.html"><strong aria-hidden="true">11.2.</strong> Reactive State Updates</a></li><li class="chapter-item expanded "><a href="11_lifecycle-state-management/03_managing-state.html"><strong aria-hidden="true">11.3.</strong> Managing State</a></li><li class="chapter-item expanded "><a href="11_lifecycle-state-management/04_task.html"><strong aria-hidden="true">11.4.</strong> Task</a></li></ol></li><li class="chapter-item expanded "><a href="12_state-management/index.html"><strong aria-hidden="true">12.</strong> State Management in Vue (Vuex & Provide/Inject)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="12_state-management/01_passing-props-data.html"><strong aria-hidden="true">12.1.</strong> Passing Props and Data</a></li><li class="chapter-item expanded "><a href="12_state-management/02_vuex-global-state.html"><strong aria-hidden="true">12.2.</strong> Managing Global State with Vuex</a></li><li class="chapter-item expanded "><a href="12_state-management/03_provide-inject-api.html"><strong aria-hidden="true">12.3.</strong> Provide/Inject API</a></li><li class="chapter-item expanded "><a href="12_state-management/04_task.html"><strong aria-hidden="true">12.4.</strong> Task</a></li></ol></li><li class="chapter-item expanded "><a href="13_higher-order-components/index.html"><strong aria-hidden="true">13.</strong> Higher-Order Components and Mixins</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="13_higher-order-components/01_higher-order-components.html"><strong aria-hidden="true">13.1.</strong> Higher-Order Components</a></li><li class="chapter-item expanded "><a href="13_higher-order-components/02_use-cases.html"><strong aria-hidden="true">13.2.</strong> Use Cases for Higher-Order Components</a></li><li class="chapter-item expanded "><a href="13_higher-order-components/03_creating-hocs.html"><strong aria-hidden="true">13.3.</strong> Creating Higher-Order Components</a></li><li class="chapter-item expanded "><a href="13_higher-order-components/04_using-mixins.html"><strong aria-hidden="true">13.4.</strong> Using Mixins</a></li><li class="chapter-item expanded "><a href="13_higher-order-components/05_task.html"><strong aria-hidden="true">13.5.</strong> Task</a></li></ol></li><li class="chapter-item expanded "><a href="14_error-handling/index.html"><strong aria-hidden="true">14.</strong> Error Handling in Vue.js</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="14_error-handling/01_global-error-handling.html"><strong aria-hidden="true">14.1.</strong> Global Error Handling</a></li><li class="chapter-item expanded "><a href="14_error-handling/02_error-boundaries-errorcaptured.html"><strong aria-hidden="true">14.2.</strong> Error Boundaries with errorCaptured</a></li><li class="chapter-item expanded "><a href="14_error-handling/03_error-handling-use-cases.html"><strong aria-hidden="true">14.3.</strong> Use Cases for Error Handling</a></li><li class="chapter-item expanded "><a href="14_error-handling/04_task.html"><strong aria-hidden="true">14.4.</strong> Task</a></li></ol></li><li class="chapter-item expanded "><a href="15_advanced-composition-api/index.html"><strong aria-hidden="true">15.</strong> Advanced Composition API Techniques</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="15_advanced-composition-api/01_computed-properties.html"><strong aria-hidden="true">15.1.</strong> Computed Properties</a></li><li class="chapter-item expanded "><a href="15_advanced-composition-api/02_watch-watcheffect.html"><strong aria-hidden="true">15.2.</strong> watch and watchEffect</a></li><li class="chapter-item expanded "><a href="15_advanced-composition-api/03_memoization-in-vue.html"><strong aria-hidden="true">15.3.</strong> Memoization in Vue</a></li><li class="chapter-item expanded "><a href="15_advanced-composition-api/04_custom-composition-functions.html"><strong aria-hidden="true">15.4.</strong> Custom Composition Functions</a></li><li class="chapter-item expanded "><a href="15_advanced-composition-api/05_task.html"><strong aria-hidden="true">15.5.</strong> Task</a></li></ol></li><li class="chapter-item expanded "><a href="16_performance-optimization/index.html"><strong aria-hidden="true">16.</strong> Vue.js Performance Optimization</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="16_performance-optimization/01_optimizing-vue-apps.html"><strong aria-hidden="true">16.1.</strong> Optimizing Vue Applications</a></li><li class="chapter-item expanded "><a href="16_performance-optimization/02_performance-bottlenecks.html"><strong aria-hidden="true">16.2.</strong> Identifying Performance Bottlenecks</a></li><li class="chapter-item expanded "><a href="16_performance-optimization/03_lazy-loading-components.html"><strong aria-hidden="true">16.3.</strong> Lazy Loading Components</a></li><li class="chapter-item expanded "><a href="16_performance-optimization/04_vue-optimization-techniques.html"><strong aria-hidden="true">16.4.</strong> Built-in Vue Optimization Techniques</a></li><li class="chapter-item expanded "><a href="16_performance-optimization/05_task.html"><strong aria-hidden="true">16.5.</strong> Task</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started-with-vuejs-3"><a class="header" href="#getting-started-with-vuejs-3">Getting Started with Vue.js 3</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="introduction-to-vuejs-3-tutorial-series"><a class="header" href="#introduction-to-vuejs-3-tutorial-series">Introduction to Vue.js 3 Tutorial Series</a></h1>
+<p>Welcome to the <strong>Advanced Vue.js 3 Tutorial Series</strong>, designed specifically for intermediate and advanced developers who want to deepen their knowledge of Vue.js and master its use in real-world applications. In this series, we’ll dive into practical examples, industry-standard best practices, and performance optimization techniques to take your Vue.js skills to the next level.</p>
+<h2 id="why-vuejs-3"><a class="header" href="#why-vuejs-3">Why Vue.js 3?</a></h2>
+<p>Vue.js 3 is one of the most popular modern JavaScript frameworks for building user interfaces and single-page applications (SPAs). With its reactive data binding, component-based architecture, and ease of integration, Vue.js has become the go-to choice for developers building dynamic web applications. However, Vue.js 3 introduces several powerful features that make it more robust and scalable for larger projects:</p>
+<h3 id="key-features-of-vuejs-3"><a class="header" href="#key-features-of-vuejs-3">Key Features of Vue.js 3:</a></h3>
+<ol>
+<li><strong>Composition API</strong>: Offers more flexible and readable logic organization, especially in large-scale applications.</li>
+<li><strong>Improved TypeScript Support</strong>: TypeScript is now first-class in Vue.js 3, making it easier to build more maintainable and scalable applications.</li>
+<li><strong>Better Performance</strong>: Vue.js 3 has a smaller runtime and faster rendering performance thanks to optimizations under the hood.</li>
+<li><strong>Teleport, Fragments, and Suspense</strong>: New features for handling UI structures and async components.</li>
+<li><strong>Tree-Shaking</strong>: More efficient packaging of libraries, resulting in smaller bundle sizes.</li>
+</ol>
+<h2 id="target-audience"><a class="header" href="#target-audience">Target Audience</a></h2>
+<p>This series is for developers who already have a working knowledge of JavaScript, HTML, and CSS and are familiar with Vue.js basics. If you've built Vue.js 2 projects or have dabbled in Vue.js 3, this series will help you transition into expert-level concepts and build complex applications with confidence.</p>
+<h3 id="topics-covered"><a class="header" href="#topics-covered">Topics Covered:</a></h3>
+<ol>
+<li><strong>Getting Started</strong>: Setting up your Vue.js 3 project and understanding the basic structure.</li>
+<li><strong>Understanding Components</strong>: Learn about component-based architecture, creating reusable components, and managing component state.</li>
+<li><strong>Using Props</strong>: How to pass data between components using props and best practices for managing prop validation.</li>
+<li><strong>Styling and Media</strong>: Techniques for styling your Vue.js applications and managing media assets effectively.</li>
+<li><strong>Composition API</strong>: A deep dive into Vue.js 3's Composition API for better code organization and reusability.</li>
+<li><strong>Lifecycle Hooks</strong>: Explore Vue.js lifecycle hooks, understanding how and when to use them in component lifecycle management.</li>
+<li><strong>Dynamic Rendering</strong>: Master techniques for rendering content conditionally and efficiently using Vue.js directives.</li>
+<li><strong>Forms</strong>: Learn to build and validate dynamic forms using Vue.js, including custom input components and form state management.</li>
+<li><strong>Vue Router</strong>: Best practices for handling navigation and routing in single-page applications using Vue Router.</li>
+<li><strong>Class vs. Functional Components</strong>: A comparison between class-based components and functional components, when and why to use them.</li>
+<li><strong>Lifecycle &amp; State Management</strong>: Managing state effectively throughout the lifecycle of components and across your application.</li>
+<li><strong>State Management</strong>: A deep dive into state management tools like Vuex and Pinia, focusing on best practices for scalable state management.</li>
+<li><strong>Higher-Order Components</strong>: Learn how to create higher-order components to add functionality and reuse logic across components.</li>
+<li><strong>Error Handling</strong>: Best practices for catching and handling errors in Vue.js applications, including error boundaries.</li>
+<li><strong>Advanced Composition API</strong>: Explore advanced patterns using the Composition API, including custom composables and reactivity handling.</li>
+<li><strong>Performance Optimization</strong>: Techniques for optimizing the performance of Vue.js applications, including lazy loading, code splitting, and more.</li>
+</ol>
+<h2 id="approach"><a class="header" href="#approach">Approach</a></h2>
+<p>Each tutorial will provide:</p>
+<ul>
+<li><strong>Concise Explanations</strong>: We’ll focus on clarity without unnecessary jargon.</li>
+<li><strong>Practical Examples</strong>: Each concept will be paired with real-world use cases and code snippets.</li>
+<li><strong>Best Practices</strong>: Insights into the industry standards for writing clean, maintainable Vue.js code.</li>
+<li><strong>Challenges and Exercises</strong>: Each lesson will end with optional challenges to cement your understanding and build muscle memory.</li>
+</ul>
+<p>Stay tuned as we kick off with our first tutorial on <strong>Vue.js 3 Composition API: A Deep Dive</strong>! Let’s elevate your Vue.js skills to new heights.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vuejs-3-directives"><a class="header" href="#vuejs-3-directives">Vue.js 3 Directives</a></h1>
+<p>Vue.js directives are special tokens in the markup that tell the library to do something with a DOM element. While Vue provides several built-in directives like <code>v-if</code>, <code>v-for</code>, and <code>v-bind</code>, it also allows developers to create custom directives, making Vue incredibly flexible for handling DOM manipulation and advanced UI behaviors.</p>
+<p>In this tutorial, we’ll explore the most common directives and dive into building custom ones for real-world applications.</p>
+<h2 id="what-are-vue-directives"><a class="header" href="#what-are-vue-directives">What Are Vue Directives?</a></h2>
+<p>Directives are essentially special attributes in Vue.js that extend HTML’s functionality by binding data to the DOM in declarative ways. They are prefixed with <code>v-</code> to indicate Vue-specific functionality.</p>
+<p>Here are some of the most common Vue directives:</p>
+<ul>
+<li><code>v-bind</code>: Dynamically bind one or more attributes to an element.</li>
+<li><code>v-model</code>: Two-way data binding for form inputs.</li>
+<li><code>v-if</code>, <code>v-else</code>, <code>v-else-if</code>: Conditionally render elements.</li>
+<li><code>v-show</code>: Show or hide an element based on the bound condition.</li>
+<li><code>v-for</code>: Render elements based on data iteratively.</li>
+<li><code>v-on</code>: Attach event listeners to DOM elements.</li>
+<li><code>v-slot</code>: Expose slot properties and content.</li>
+<li><code>v-pre</code>, <code>v-cloak</code>, <code>v-once</code>: These are advanced and provide specific rendering behaviors for performance.</li>
+</ul>
+<h2 id="common-built-in-vue-directives"><a class="header" href="#common-built-in-vue-directives">Common Built-In Vue Directives</a></h2>
+<h3 id="1-v-bind-binding-attributes-dynamically"><a class="header" href="#1-v-bind-binding-attributes-dynamically">1. <code>v-bind</code>: Binding Attributes Dynamically</a></h3>
+<p>The <code>v-bind</code> directive is used to dynamically bind an attribute to an element. It can be used with almost any HTML attribute.</p>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;img v-bind:src="imageUrl" alt="Dynamic Image" /&gt;
+  &lt;!-- Short syntax: --&gt;
+  &lt;img :src="imageUrl" alt="Short Syntax" /&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      imageUrl: "https://example.com/my-image.jpg",
+    };
+  },
+};
+&lt;/script&gt;
+</code></pre>
+<p>In this example, <code>v-bind:src</code> binds the image URL dynamically from the <code>data</code> object.</p>
+<h3 id="2-v-model-two-way-data-binding"><a class="header" href="#2-v-model-two-way-data-binding">2. <code>v-model</code>: Two-Way Data Binding</a></h3>
+<p>The <code>v-model</code> directive simplifies two-way data binding, especially for forms.</p>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;input v-model="username" placeholder="Enter your username" /&gt;
+  &lt;p&gt;Your username: {{ username }}&lt;/p&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      username: "",
+    };
+  },
+};
+&lt;/script&gt;
+</code></pre>
+<p>This makes the input field reactive, updating the value in the DOM and in the Vue instance’s data simultaneously.</p>
+<h3 id="3-v-if-v-else-v-else-if-conditional-rendering"><a class="header" href="#3-v-if-v-else-v-else-if-conditional-rendering">3. <code>v-if</code>, <code>v-else</code>, <code>v-else-if</code>: Conditional Rendering</a></h3>
+<p>These directives conditionally render elements based on the evaluation of an expression.</p>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;p v-if="isLoggedIn"&gt;Welcome back!&lt;/p&gt;
+  &lt;p v-else-if="hasAccount"&gt;Please log in&lt;/p&gt;
+  &lt;p v-else&gt;Create an account&lt;/p&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      isLoggedIn: false,
+      hasAccount: true,
+    };
+  },
+};
+&lt;/script&gt;
+</code></pre>
+<p>In this example, Vue dynamically renders the appropriate message based on the <code>isLoggedIn</code> and <code>hasAccount</code> conditions.</p>
+<h3 id="4-v-for-list-rendering"><a class="header" href="#4-v-for-list-rendering">4. <code>v-for</code>: List Rendering</a></h3>
+<p>The <code>v-for</code> directive is used to loop over data and render elements for each item in the array or object.</p>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;ul&gt;
+    &lt;li v-for="(item, index) in items" :key="index"&gt;{{ item.name }}&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      items: [
+        { name: "Item 1" },
+        { name: "Item 2" },
+        { name: "Item 3" },
+      ],
+    };
+  },
+};
+&lt;/script&gt;
+</code></pre>
+<p>This efficiently renders a list of items from the <code>items</code> array.</p>
+<h3 id="5-v-on-event-handling"><a class="header" href="#5-v-on-event-handling">5. <code>v-on</code>: Event Handling</a></h3>
+<p>The <code>v-on</code> directive is used to listen to DOM events.</p>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;button v-on:click="handleClick"&gt;Click me&lt;/button&gt;
+  &lt;!-- Short syntax: --&gt;
+  &lt;button @click="handleClick"&gt;Click me&lt;/button&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  methods: {
+    handleClick() {
+      alert("Button clicked!");
+    },
+  },
+};
+&lt;/script&gt;
+</code></pre>
+<p>Here, the <code>v-on:click</code> directive attaches a click event listener to the button.</p>
+<h2 id="creating-custom-directives"><a class="header" href="#creating-custom-directives">Creating Custom Directives</a></h2>
+<p>Vue.js allows you to create custom directives that can encapsulate specific behavior. For example, let’s create a custom directive that automatically focuses an input element when it is rendered.</p>
+<h3 id="example-custom-focus-directive"><a class="header" href="#example-custom-focus-directive">Example: Custom Focus Directive</a></h3>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;input v-focus placeholder="Focus on render" /&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  directives: {
+    focus: {
+      mounted(el) {
+        el.focus();
+      },
+    },
+  },
+};
+&lt;/script&gt;
+</code></pre>
+<p>In this example, the <code>v-focus</code> directive is applied to the input field, and it will focus automatically when the element is inserted into the DOM. The <code>mounted</code> hook of the directive gives access to the element, allowing us to call <code>el.focus()</code>.</p>
+<h3 id="directive-lifecycle-hooks"><a class="header" href="#directive-lifecycle-hooks">Directive Lifecycle Hooks</a></h3>
+<p>Just like Vue components, directives have lifecycle hooks:</p>
+<ul>
+<li><code>beforeMount</code>: Called before the element is inserted into the DOM.</li>
+<li><code>mounted</code>: Called when the directive’s element is inserted into the DOM.</li>
+<li><code>beforeUpdate</code>: Called before the element’s data is updated.</li>
+<li><code>updated</code>: Called after the data has been updated.</li>
+<li><code>beforeUnmount</code>: Called before the directive is unbound from the element.</li>
+<li><code>unmounted</code>: Called when the directive is removed from the DOM.</li>
+</ul>
+<h2 id="best-practices-for-directives"><a class="header" href="#best-practices-for-directives">Best Practices for Directives</a></h2>
+<ol>
+<li><strong>Use Built-In Directives When Possible</strong>: Vue’s built-in directives cover most common cases, so prefer using them over custom directives unless necessary.</li>
+<li><strong>Scope Custom Directives</strong>: Ensure custom directives are scoped to prevent side effects.</li>
+<li><strong>Avoid Overusing Directives</strong>: Directives are powerful, but using them excessively can make the template hard to read. Prefer using methods or computed properties for complex logic.</li>
+<li><strong>Naming</strong>: Custom directives should have clear, descriptive names to indicate their purpose.</li>
+</ol>
+<h2 id="real-world-example-input-autofocus-with-directive"><a class="header" href="#real-world-example-input-autofocus-with-directive">Real-World Example: Input AutoFocus with Directive</a></h2>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;h1&gt;Registration Form&lt;/h1&gt;
+    &lt;input v-focus type="text" placeholder="Your Name" /&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  directives: {
+    focus: {
+      mounted(el) {
+        el.focus();
+      },
+    },
+  },
+};
+&lt;/script&gt;
+</code></pre>
+<p>This simple directive can greatly enhance user experience by automatically focusing the input field when a form is rendered.</p>
+<hr />
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<p>Vue.js directives provide powerful ways to control and interact with the DOM. Built-in directives like <code>v-bind</code>, <code>v-for</code>, and <code>v-model</code> are essential for daily development, while custom directives can be used to encapsulate specific functionality in your applications. Understanding and mastering Vue directives is crucial for building clean, efficient, and maintainable code.</p>
+<p>In the next tutorial, we will dive deeper into the <strong>Vue Composition API</strong> to further enhance your Vue.js applications. Stay tuned!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="virtual-dom"><a class="header" href="#virtual-dom">Virtual DOM</a></h1>
+<p>The Virtual DOM (VDOM) is one of the core concepts that make Vue.js fast and efficient. Understanding how Vue uses the Virtual DOM is crucial for optimizing your applications and writing performant code. In this section, we'll dive deep into what the Virtual DOM is, how Vue.js leverages it, and how to optimize your applications using this powerful feature.</p>
+<h2 id="what-is-the-virtual-dom"><a class="header" href="#what-is-the-virtual-dom">What is the Virtual DOM?</a></h2>
+<p>The Virtual DOM is a lightweight, in-memory representation of the actual DOM. It’s essentially a JavaScript object that mirrors the structure of the real DOM. Instead of manipulating the real DOM directly, Vue manipulates this virtual representation, calculates the minimal set of changes needed, and then applies those changes to the real DOM in a highly optimized way.</p>
+<h3 id="how-does-it-work"><a class="header" href="#how-does-it-work">How Does It Work?</a></h3>
+<p>Here’s a high-level view of the Virtual DOM process:</p>
+<ol>
+<li><strong>Rendering</strong>: When your Vue component is first rendered, Vue creates a virtual DOM tree from the component's template or render function.</li>
+<li><strong>Diffing</strong>: When the component’s state changes, Vue creates a new Virtual DOM tree and compares it with the previous one. This process is known as "diffing."</li>
+<li><strong>Patching</strong>: Based on the diff, Vue identifies the minimal set of changes needed and applies those changes (patches) to the actual DOM.</li>
+</ol>
+<h3 id="benefits-of-the-virtual-dom"><a class="header" href="#benefits-of-the-virtual-dom">Benefits of the Virtual DOM</a></h3>
+<ol>
+<li><strong>Performance Optimization</strong>: Manipulating the real DOM is slow because browsers have to reflow, repaint, and recalculate styles. By batching updates and applying minimal changes, the Virtual DOM speeds up the process significantly.</li>
+<li><strong>Predictability</strong>: Since Vue only updates the parts of the DOM that have changed, you can write your templates without worrying about low-level DOM optimizations.</li>
+<li><strong>Cross-Platform</strong>: The Virtual DOM allows Vue to be platform-agnostic. It can render to a browser, mobile device, or even a different rendering target (e.g., server-side rendering or WebGL).</li>
+</ol>
+<h2 id="vuejs-and-the-virtual-dom"><a class="header" href="#vuejs-and-the-virtual-dom">Vue.js and the Virtual DOM</a></h2>
+<p>Vue.js uses a high-performance Virtual DOM implementation that is efficient and ensures that the least amount of DOM updates happen. Vue optimizes the Virtual DOM through a smart <strong>diffing algorithm</strong> that minimizes the performance cost of updates.</p>
+<h3 id="virtual-dom-vs-real-dom"><a class="header" href="#virtual-dom-vs-real-dom">Virtual DOM vs Real DOM</a></h3>
+<p>To better understand the value of the Virtual DOM, let’s compare it with the real DOM:</p>
+<div class="table-wrapper"><table><thead><tr><th><strong>Virtual DOM</strong></th><th><strong>Real DOM</strong></th></tr></thead><tbody>
+<tr><td>A lightweight JavaScript object that represents the DOM.</td><td>The actual DOM that the browser interacts with.</td></tr>
+<tr><td>Changes are computed in memory.</td><td>Direct manipulations to the DOM.</td></tr>
+<tr><td>Fast diffing and patching.</td><td>Every change results in an immediate repaint/reflow, which can be expensive.</td></tr>
+<tr><td>Updates are batched and applied efficiently.</td><td>Updates happen immediately, leading to potential performance bottlenecks.</td></tr>
+</tbody></table>
+</div>
+<h3 id="example-basic-virtual-dom-update"><a class="header" href="#example-basic-virtual-dom-update">Example: Basic Virtual DOM Update</a></h3>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;p&gt;{{ message }}&lt;/p&gt;
+    &lt;button @click="updateMessage"&gt;Update Message&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      message: "Hello, World!",
+    };
+  },
+  methods: {
+    updateMessage() {
+      this.message = "Hello, Vue.js 3!";
+    },
+  },
+};
+&lt;/script&gt;
+</code></pre>
+<p>In this example, when the button is clicked, the message changes. Instead of directly updating the DOM, Vue re-renders the virtual DOM with the updated <code>message</code>. Vue compares the new and old virtual DOM trees and determines that only the <code>&lt;p&gt;</code> tag needs to be updated in the real DOM.</p>
+<h2 id="optimizing-virtual-dom-performance"><a class="header" href="#optimizing-virtual-dom-performance">Optimizing Virtual DOM Performance</a></h2>
+<p>While the Virtual DOM already offers performance improvements, there are ways to further optimize your Vue.js applications to make them more efficient.</p>
+<h3 id="1-using-v-once-for-static-content"><a class="header" href="#1-using-v-once-for-static-content">1. Using <code>v-once</code> for Static Content</a></h3>
+<p>For content that doesn’t need to be re-rendered, use the <code>v-once</code> directive to render it only once:</p>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;div v-once&gt;
+    &lt;p&gt;This will only be rendered once!&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+<p>This can be useful for static content, such as headers, footers, or large, unchanging blocks of data.</p>
+<h3 id="2-avoid-unnecessary-re-renders-with-key"><a class="header" href="#2-avoid-unnecessary-re-renders-with-key">2. Avoid Unnecessary Re-Renders with <code>key</code></a></h3>
+<p>The <code>key</code> attribute is essential when rendering dynamic content like lists. It helps Vue to track elements more efficiently, preventing unnecessary re-renders.</p>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;ul&gt;
+    &lt;li v-for="item in items" :key="item.id"&gt;{{ item.name }}&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      items: [
+        { id: 1, name: "Item 1" },
+        { id: 2, name: "Item 2" },
+        { id: 3, name: "Item 3" },
+      ],
+    };
+  },
+};
+&lt;/script&gt;
+</code></pre>
+<p>By assigning a unique <code>key</code> to each list item, Vue can track each element more efficiently and only re-render items that change.</p>
+<h3 id="3-use-v-memo-for-expensive-components"><a class="header" href="#3-use-v-memo-for-expensive-components">3. Use <code>v-memo</code> for Expensive Components</a></h3>
+<p>In Vue 3, you can use the new <code>v-memo</code> directive to optimize components that are expensive to render. It will skip re-rendering unless the values of specified reactive dependencies change.</p>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;ExpensiveComponent v-memo="[propA, propB]" /&gt;
+&lt;/template&gt;
+</code></pre>
+<p><code>v-memo</code> is especially useful when working with large datasets or complex UI elements.</p>
+<h3 id="4-throttling-expensive-updates"><a class="header" href="#4-throttling-expensive-updates">4. Throttling Expensive Updates</a></h3>
+<p>For components that frequently update, like inputs or events that fire rapidly, consider throttling or debouncing updates to prevent excessive rendering:</p>
+<pre><code class="language-js">methods: {
+  handleInput: _.debounce(function (value) {
+    this.value = value;
+  }, 300),
+}
+</code></pre>
+<p>Using utilities like <code>debounce</code> or <code>throttle</code> from lodash ensures your components don’t overwhelm the Virtual DOM with unnecessary updates.</p>
+<h3 id="5-use-functional-components"><a class="header" href="#5-use-functional-components">5. Use Functional Components</a></h3>
+<p>Functional components are stateless and don’t manage reactivity themselves. They are lightweight and more performant because they don’t have lifecycle methods or internal state.</p>
+<pre><code class="language-vue">&lt;template functional&gt;
+  &lt;div&gt;
+    Functional component content here!
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+<p>These are especially useful for simple presentational components where reactivity isn’t needed.</p>
+<h2 id="custom-render-functions-and-jsx"><a class="header" href="#custom-render-functions-and-jsx">Custom Render Functions and JSX</a></h2>
+<p>In some advanced use cases, Vue allows you to write custom render functions or use JSX to manually define the virtual DOM structure. This gives you full control over how your components are rendered and updated.</p>
+<p>Example of a render function:</p>
+<pre><code class="language-js">render(h) {
+  return h('div', [
+    h('p', 'This is a custom render function!'),
+    h('button', { on: { click: this.handleClick } }, 'Click me'),
+  ]);
+}
+</code></pre>
+<p>This render function defines how the component's virtual DOM should be structured. While templates are the recommended approach in Vue, render functions and JSX can provide more flexibility in complex scenarios.</p>
+<h2 id="real-world-scenario-optimizing-list-rendering-with-virtual-dom"><a class="header" href="#real-world-scenario-optimizing-list-rendering-with-virtual-dom">Real-World Scenario: Optimizing List Rendering with Virtual DOM</a></h2>
+<p>Let’s take a real-world example of rendering a large list of items with thousands of entries. Without optimization, rendering such a list could severely impact performance.</p>
+<p>A simple, inefficient approach:</p>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;ul&gt;
+    &lt;li v-for="item in largeList" :key="item.id"&gt;{{ item.name }}&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      largeList: Array.from({ length: 10000 }, (v, k) =&gt; ({ id: k, name: `Item ${k}` })),
+    };
+  },
+};
+&lt;/script&gt;
+</code></pre>
+<p>In this case, Vue would attempt to render all 10,000 items, which can be very slow. A better approach is to use techniques like lazy loading, pagination, or a virtualized list (e.g., using libraries like <code>vue-virtual-scroller</code>), which only renders a small subset of the list at any given time.</p>
+<hr />
+<h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
+<p>The Virtual DOM is a crucial part of how Vue.js efficiently updates the DOM. By understanding how it works, and applying optimization techniques like <code>v-once</code>, <code>v-memo</code>, throttling, and functional components, you can ensure that your Vue.js applications remain performant even as they scale. Mastering these Virtual DOM concepts will significantly improve your ability to write optimized and scalable applications.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="spa-vs-mpa"><a class="header" href="#spa-vs-mpa">SPA vs MPA</a></h1>
+<p>When building web applications with Vue.js, you typically choose between two architectural approaches: <strong>Single-Page Applications (SPA)</strong> and <strong>Multi-Page Applications (MPA)</strong>. Each approach has its own advantages and trade-offs, depending on the use case and requirements of your project. In this section, we’ll explore both approaches, compare them, and discuss when to use Vue.js in SPAs vs MPAs.</p>
+<h2 id="what-is-a-single-page-application-spa"><a class="header" href="#what-is-a-single-page-application-spa">What is a Single-Page Application (SPA)?</a></h2>
+<p>A Single-Page Application (SPA) is a web application that loads a single HTML page and dynamically updates the content as the user interacts with it. In an SPA, most of the application's logic, including routing, data fetching, and rendering, is handled on the client side, usually with JavaScript. Vue.js is highly suited for building SPAs due to its efficient DOM updates and reactivity system.</p>
+<h3 id="key-features-of-spas"><a class="header" href="#key-features-of-spas">Key Features of SPAs:</a></h3>
+<ul>
+<li><strong>Single HTML Page</strong>: The application loads once, and content is dynamically updated within the same page.</li>
+<li><strong>Client-Side Routing</strong>: Vue Router manages navigation, allowing users to switch between views without reloading the page.</li>
+<li><strong>Fast Interactions</strong>: Once the page is loaded, navigation and user interactions feel fast because only the required components are updated.</li>
+<li><strong>Rich User Experience</strong>: SPAs allow for complex, highly interactive user interfaces that feel more like native applications.</li>
+</ul>
+<h3 id="how-vuejs-fits-into-spas"><a class="header" href="#how-vuejs-fits-into-spas">How Vue.js Fits Into SPAs</a></h3>
+<p>Vue.js is an excellent choice for SPAs because of its efficient data binding, component-based architecture, and seamless integration with <strong>Vue Router</strong> for handling client-side routing.</p>
+<p>Example of an SPA route setup using Vue Router:</p>
+<pre><code class="language-js">import { createRouter, createWebHistory } from 'vue-router';
+import Home from './views/Home.vue';
+import About from './views/About.vue';
+
+const routes = [
+  { path: '/', component: Home },
+  { path: '/about', component: About },
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
+
+export default router;
+</code></pre>
+<p>Here, you define routes for the <code>Home</code> and <code>About</code> components, and when the user navigates, Vue Router dynamically updates the view without reloading the page.</p>
+<h3 id="advantages-of-spas"><a class="header" href="#advantages-of-spas">Advantages of SPAs:</a></h3>
+<ol>
+<li><strong>Seamless User Experience</strong>: SPAs offer faster, smoother transitions between pages because only parts of the page are updated.</li>
+<li><strong>Better Interactivity</strong>: SPAs can provide a richer user experience with real-time updates, without full page reloads.</li>
+<li><strong>Client-Side Rendering</strong>: SPAs are rendered on the client, reducing the load on the server once the initial page is served.</li>
+<li><strong>Progressive Web App (PWA) Capabilities</strong>: SPAs are a natural fit for building PWAs that work offline and provide a native app-like experience.</li>
+</ol>
+<h3 id="disadvantages-of-spas"><a class="header" href="#disadvantages-of-spas">Disadvantages of SPAs:</a></h3>
+<ol>
+<li><strong>SEO Challenges</strong>: Since most content is rendered client-side, search engines may have trouble indexing SPA pages. Vue.js addresses this issue with server-side rendering (SSR) using <strong>Nuxt.js</strong>, but this adds complexity.</li>
+<li><strong>Longer Initial Load Time</strong>: SPAs often have a larger JavaScript bundle that needs to be downloaded and executed, leading to longer initial load times.</li>
+<li><strong>Client-Side Dependency</strong>: Because SPAs heavily rely on JavaScript, users with disabled or malfunctioning JavaScript may not be able to access your content.</li>
+<li><strong>Increased Complexity</strong>: Handling client-side routing, state management, and API interactions in SPAs can make them more complex than MPAs.</li>
+</ol>
+<hr />
+<h2 id="what-is-a-multi-page-application-mpa"><a class="header" href="#what-is-a-multi-page-application-mpa">What is a Multi-Page Application (MPA)?</a></h2>
+<p>A Multi-Page Application (MPA) is the traditional web application model where each page is served as a separate HTML file from the server. Every time a user navigates to a new page, the browser makes a new request to the server, which responds with the complete HTML for that page.</p>
+<h3 id="key-features-of-mpas"><a class="header" href="#key-features-of-mpas">Key Features of MPAs:</a></h3>
+<ul>
+<li><strong>Multiple HTML Pages</strong>: Each URL corresponds to a different HTML file served from the server.</li>
+<li><strong>Server-Side Routing</strong>: The server determines which page to load based on the URL.</li>
+<li><strong>Full Page Reloads</strong>: Every time a user navigates, the browser reloads the entire page.</li>
+<li><strong>Simpler Architecture</strong>: MPAs are often simpler because they don’t need to manage client-side routing or state management at scale.</li>
+</ul>
+<h3 id="how-vuejs-fits-into-mpas"><a class="header" href="#how-vuejs-fits-into-mpas">How Vue.js Fits Into MPAs</a></h3>
+<p>Vue.js can still be used effectively in MPAs by embedding Vue components within different pages to handle specific parts of the UI. Instead of building the entire application as a single page, Vue.js is used to enhance interactive elements on each page.</p>
+<p>Example of Vue in an MPA:</p>
+<pre><code class="language-html">&lt;!-- Page 1: index.html --&gt;
+&lt;div id="app1"&gt;
+  &lt;app-header&gt;&lt;/app-header&gt;
+  &lt;app-content&gt;&lt;/app-content&gt;
+&lt;/div&gt;
+
+&lt;script src="/js/vue.js"&gt;&lt;/script&gt;
+&lt;script src="/js/app1.js"&gt;&lt;/script&gt;
+
+&lt;!-- Page 2: about.html --&gt;
+&lt;div id="app2"&gt;
+  &lt;app-about&gt;&lt;/app-about&gt;
+&lt;/div&gt;
+
+&lt;script src="/js/vue.js"&gt;&lt;/script&gt;
+&lt;script src="/js/app2.js"&gt;&lt;/script&gt;
+</code></pre>
+<p>In this example, each page has its own Vue.js app instance, but the navigation between pages is done through server-side routing (e.g., <code>/about.html</code> triggers a full reload of the new HTML file).</p>
+<h3 id="advantages-of-mpas"><a class="header" href="#advantages-of-mpas">Advantages of MPAs:</a></h3>
+<ol>
+<li><strong>Better SEO</strong>: MPAs provide individual HTML pages for each URL, making them easier to index by search engines without any need for special rendering.</li>
+<li><strong>Faster Initial Load</strong>: MPAs typically have faster initial load times because only the necessary HTML and assets for the current page are loaded.</li>
+<li><strong>Simple Architecture</strong>: For smaller projects, MPAs can be simpler to implement since they don’t require advanced client-side routing or state management.</li>
+<li><strong>Backwards Compatibility</strong>: MPAs are more compatible with older browsers and users who may have JavaScript disabled.</li>
+</ol>
+<h3 id="disadvantages-of-mpas"><a class="header" href="#disadvantages-of-mpas">Disadvantages of MPAs:</a></h3>
+<ol>
+<li><strong>Full Page Reloads</strong>: Every time the user navigates to a new page, the entire page is reloaded, which can lead to slower interactions.</li>
+<li><strong>Poorer User Experience</strong>: MPAs lack the smooth transitions and rich interactivity that SPAs offer, especially for modern, dynamic web applications.</li>
+<li><strong>Increased Server Load</strong>: Since the server is responsible for rendering each page, it can become a bottleneck in high-traffic applications.</li>
+<li><strong>State Management Complexity</strong>: Managing state across multiple pages can become cumbersome, especially if you need to maintain session or user data.</li>
+</ol>
+<hr />
+<h2 id="when-to-use-spa-vs-mpa"><a class="header" href="#when-to-use-spa-vs-mpa">When to Use SPA vs MPA</a></h2>
+<h3 id="when-to-choose-an-spa"><a class="header" href="#when-to-choose-an-spa">When to Choose an SPA:</a></h3>
+<ul>
+<li><strong>Rich User Experience</strong>: If you need a highly interactive, dynamic interface, such as for dashboards, SaaS applications, or real-time communication apps.</li>
+<li><strong>Single-Page Navigation</strong>: If your application benefits from fast page transitions without reloading, such as e-commerce or social platforms.</li>
+<li><strong>Offline Capabilities</strong>: If you're building a Progressive Web App (PWA) or want your application to work offline.</li>
+<li><strong>Complex Client-Side Logic</strong>: If your application requires complex client-side data manipulation, interactions, and state management (e.g., filtering, sorting, etc.).</li>
+</ul>
+<h3 id="when-to-choose-an-mpa"><a class="header" href="#when-to-choose-an-mpa">When to Choose an MPA:</a></h3>
+<ul>
+<li><strong>SEO-Friendly Websites</strong>: If SEO is critical, like in content-heavy sites such as blogs, portfolios, or marketing pages.</li>
+<li><strong>Simple Websites</strong>: If the application is simple, with limited dynamic content and no need for client-side routing.</li>
+<li><strong>Faster Initial Load Time</strong>: If you need a fast initial load without heavy JavaScript bundles.</li>
+<li><strong>Reduced Complexity</strong>: If your project doesn’t need complex client-side logic, and a simple multi-page architecture is sufficient.</li>
+</ul>
+<hr />
+<h2 id="spa-and-mpa-hybrid-approach"><a class="header" href="#spa-and-mpa-hybrid-approach">SPA and MPA Hybrid Approach</a></h2>
+<p>In some cases, a hybrid approach can be used, where Vue.js powers the SPA portions of the application while maintaining the overall structure of an MPA. For instance, a marketing website may be an MPA, but the user dashboard or admin panel can be an SPA.</p>
+<hr />
+<h2 id="conclusion-1"><a class="header" href="#conclusion-1">Conclusion</a></h2>
+<p>Both SPA and MPA architectures have their own strengths and are suited for different types of applications. <strong>Vue.js</strong> excels at powering both SPAs and enhancing MPAs by providing a flexible, component-based structure. Understanding the trade-offs between these architectures is key to making the right decision for your project.</p>
+<ul>
+<li><strong>Choose SPAs</strong> for dynamic, highly interactive applications where user experience is critical.</li>
+<li><strong>Choose MPAs</strong> for simpler, content-driven applications that require strong SEO and minimal client-side logic.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="setup-with-vue-cli-and-vite"><a class="header" href="#setup-with-vue-cli-and-vite">Setup with Vue CLI and Vite</a></h1>
+<p>When starting a Vue.js project, two primary tools are widely used for setting up your development environment: <strong>Vue CLI</strong> and <strong>Vite</strong>. Both offer fast, modern development workflows, but they differ in their underlying architecture and the way they handle project builds.</p>
+<p>In this section, we will explore how to set up a Vue.js 3 project using both <strong>Vue CLI</strong> and <strong>Vite</strong>, highlighting the pros and cons of each, and guiding you through a practical setup process.</p>
+<h2 id="what-is-vue-cli"><a class="header" href="#what-is-vue-cli">What is Vue CLI?</a></h2>
+<p><strong>Vue CLI</strong> (Command-Line Interface) is the official standard tooling for Vue.js. It offers a project scaffolding tool, complete with built-in features like development server, hot module replacement (HMR), and build optimization. Vue CLI is robust and highly configurable, making it great for enterprise-level applications.</p>
+<h3 id="key-features-of-vue-cli"><a class="header" href="#key-features-of-vue-cli">Key Features of Vue CLI:</a></h3>
+<ol>
+<li><strong>Project Templates</strong>: Pre-configured project templates for quickly setting up a Vue project.</li>
+<li><strong>Graphical User Interface (GUI)</strong>: Provides a GUI for managing projects and configurations if you prefer not to use the command line.</li>
+<li><strong>Built-in Vue Router and Vuex</strong>: When generating a project, you can select Vue Router and Vuex to be automatically installed.</li>
+<li><strong>Plugins Ecosystem</strong>: The plugin-based architecture allows you to extend your project with tools like Babel, TypeScript, ESLint, and PWA support.</li>
+<li><strong>Webpack-based</strong>: Uses Webpack under the hood for bundling and building your project.</li>
+</ol>
+<h3 id="installing-vue-cli"><a class="header" href="#installing-vue-cli">Installing Vue CLI</a></h3>
+<p>First, you need to install the Vue CLI globally via npm (Node Package Manager):</p>
+<pre><code class="language-bash">npm install -g @vue/cli
+</code></pre>
+<p>After installation, you can create a new Vue project using the following command:</p>
+<pre><code class="language-bash">vue create my-vue-project
+</code></pre>
+<h3 id="creating-a-project-with-vue-cli"><a class="header" href="#creating-a-project-with-vue-cli">Creating a Project with Vue CLI</a></h3>
+<p>Once you run the <code>vue create</code> command, Vue CLI will guide you through the project setup process. You’ll have two options:</p>
+<ol>
+<li><strong>Default</strong>: Pre-configured with Vue 3, Babel, and ESLint.</li>
+<li><strong>Manually Select Features</strong>: Allows you to customize your project with options like Vue Router, Vuex, TypeScript, Linter/Formatter, Unit Testing, E2E Testing, and more.</li>
+</ol>
+<p>Example of a manual setup:</p>
+<pre><code class="language-bash">? Please pick a preset:
+  Default ([Vue 3] babel, eslint)
+❯ Manually select features
+</code></pre>
+<p>After choosing the features you need, Vue CLI will scaffold the project for you, and you’ll have a fully working Vue.js setup.</p>
+<h3 id="running-the-project"><a class="header" href="#running-the-project">Running the Project</a></h3>
+<p>Once your project is created, navigate into the project directory and start the development server:</p>
+<pre><code class="language-bash">cd my-vue-project
+npm run serve
+</code></pre>
+<p>Vue CLI will spin up a local development server with hot module replacement (HMR) enabled. You can now access your application at <code>http://localhost:8080</code>.</p>
+<h3 id="pros-and-cons-of-vue-cli"><a class="header" href="#pros-and-cons-of-vue-cli">Pros and Cons of Vue CLI</a></h3>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li><strong>Mature and Feature-Rich</strong>: Vue CLI is battle-tested and offers an extensive ecosystem of plugins and configuration options.</li>
+<li><strong>GUI Tool</strong>: For developers who prefer a visual interface, Vue CLI offers a GUI to manage projects and configure plugins easily.</li>
+<li><strong>Great for Large Projects</strong>: It is well-suited for large-scale applications that require more complex configurations (e.g., Vue Router, Vuex, TypeScript, etc.).</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li><strong>Slower Builds</strong>: Since Vue CLI is based on Webpack, build times can be slower compared to newer bundlers like Vite.</li>
+<li><strong>Overhead for Small Projects</strong>: For small or simple projects, the extra features and configurations of Vue CLI can feel overwhelming.</li>
+</ul>
+<hr />
+<h2 id="what-is-vite"><a class="header" href="#what-is-vite">What is Vite?</a></h2>
+<p><strong>Vite</strong> is a modern build tool developed by the creator of Vue.js, Evan You. It leverages native ES modules and modern browser APIs to provide incredibly fast development builds and a more efficient production build process. While it was initially created for Vue.js, Vite now supports multiple frontend frameworks.</p>
+<h3 id="key-features-of-vite"><a class="header" href="#key-features-of-vite">Key Features of Vite:</a></h3>
+<ol>
+<li><strong>Lightning-Fast Hot Module Replacement (HMR)</strong>: Vite uses native ES modules, allowing near-instant updates during development.</li>
+<li><strong>On-Demand Compilation</strong>: Instead of bundling the entire app upfront, Vite compiles and serves modules on-demand, reducing load times during development.</li>
+<li><strong>Optimized Production Builds</strong>: Vite uses Rollup for bundling production builds, which results in smaller bundle sizes and faster performance.</li>
+<li><strong>Framework-Agnostic</strong>: Although Vite is the recommended tool for Vue.js 3, it also supports frameworks like React, Preact, Svelte, and more.</li>
+<li><strong>Minimal Configuration</strong>: Vite is opinionated and provides sensible defaults, reducing the need for extensive configuration files.</li>
+</ol>
+<h3 id="installing-vite"><a class="header" href="#installing-vite">Installing Vite</a></h3>
+<p>You can easily set up a Vue.js project using Vite by using npm or yarn. Here’s how:</p>
+<pre><code class="language-bash">npm init vite@latest my-vue-project
+</code></pre>
+<p>After this, you’ll be prompted to select a framework. Choose <strong>Vue</strong>:</p>
+<pre><code class="language-bash">? Select a framework:
+  vanilla
+  vue
+  vue-ts
+  react
+  preact
+  lit
+  svelte
+  others
+</code></pre>
+<p>Next, navigate to the project directory and install the dependencies:</p>
+<pre><code class="language-bash">cd my-vue-project
+npm install
+</code></pre>
+<h3 id="creating-a-project-with-vite"><a class="header" href="#creating-a-project-with-vite">Creating a Project with Vite</a></h3>
+<p>Vite uses a much simpler project setup compared to Vue CLI. By default, Vite includes only the essential dependencies required for a Vue 3 project. Additional tools like Vue Router or Vuex can be added later as needed.</p>
+<h3 id="running-the-project-1"><a class="header" href="#running-the-project-1">Running the Project</a></h3>
+<p>Once your project is created, you can run the development server with:</p>
+<pre><code class="language-bash">npm run dev
+</code></pre>
+<p>Vite will start a development server at <code>http://localhost:5173</code> with blazing-fast HMR. You’ll immediately notice the speed difference during development, especially with larger projects.</p>
+<h3 id="pros-and-cons-of-vite"><a class="header" href="#pros-and-cons-of-vite">Pros and Cons of Vite</a></h3>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li><strong>Super Fast</strong>: Thanks to its on-demand compilation and native ES modules, Vite offers incredibly fast startup times and HMR during development.</li>
+<li><strong>Simplicity</strong>: Vite’s minimal configuration and sensible defaults make it very easy to get started with.</li>
+<li><strong>Efficient Builds</strong>: Vite uses Rollup for production builds, which generates highly optimized bundles.</li>
+<li><strong>Future-Proof</strong>: Vite is built on modern technologies and is more aligned with the future of the web, such as ES modules and faster build systems.</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li><strong>Less Mature</strong>: Vite is a newer tool compared to Vue CLI and might have fewer plugins and community support, especially for niche use cases.</li>
+<li><strong>Not as Customizable</strong>: While Vite’s simplicity is an advantage, it also means there’s less out-of-the-box customization compared to Vue CLI, particularly for complex, enterprise-level configurations.</li>
+<li><strong>Lacks Built-in Plugin Ecosystem</strong>: Vite doesn't come with a plugin architecture as extensive as Vue CLI’s, so if you need heavy customization, you may have to do more manual configuration.</li>
+</ul>
+<hr />
+<h2 id="vue-cli-vs-vite-which-one-to-choose"><a class="header" href="#vue-cli-vs-vite-which-one-to-choose">Vue CLI vs Vite: Which One to Choose?</a></h2>
+<h3 id="when-to-choose-vue-cli"><a class="header" href="#when-to-choose-vue-cli">When to Choose Vue CLI:</a></h3>
+<ul>
+<li><strong>Enterprise Applications</strong>: For large-scale or enterprise applications where you need more advanced configuration options, Vue CLI is more mature and feature-rich.</li>
+<li><strong>Legacy Projects</strong>: If you have a legacy codebase built on Webpack or need to maintain compatibility with older configurations and tools, Vue CLI is the better choice.</li>
+<li><strong>More Plugins and Integrations</strong>: If your project requires extensive use of plugins (e.g., TypeScript, Vuex, Vue Router, PWA support), Vue CLI’s plugin ecosystem is more comprehensive.</li>
+</ul>
+<h3 id="when-to-choose-vite"><a class="header" href="#when-to-choose-vite">When to Choose Vite:</a></h3>
+<ul>
+<li><strong>Speed and Performance</strong>: If development speed is your priority, especially for small to medium-sized applications, Vite’s fast build times and HMR make it an excellent choice.</li>
+<li><strong>Modern Projects</strong>: If you’re starting a new project and want to leverage modern web technologies (like native ES modules), Vite’s minimal setup and fast development environment will help you get up and running quickly.</li>
+<li><strong>Smaller, Simpler Projects</strong>: For smaller applications or simpler projects that don’t need heavy configurations, Vite’s simplicity and speed will boost your development process.</li>
+</ul>
+<hr />
+<h2 id="conclusion-2"><a class="header" href="#conclusion-2">Conclusion</a></h2>
+<p>Both <strong>Vue CLI</strong> and <strong>Vite</strong> offer powerful ways to set up and manage Vue.js 3 projects, but each has its strengths and trade-offs. <strong>Vue CLI</strong> is robust, feature-rich, and better suited for large projects requiring advanced configuration, while <strong>Vite</strong> offers lightning-fast development times and a modern, minimal setup ideal for small to medium-sized projects.</p>
+<p>For most new projects, <strong>Vite</strong> is the recommended choice due to its performance and modern architecture. However, <strong>Vue CLI</strong> remains a solid choice for more complex applications that require extensive plugin support and configurability.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
+<p>Getting started with Vue.js 3 is simple and straightforward. Whether you’re building a small project or a large-scale application, Vue provides flexible ways to set up your environment. You can use either the <strong>Vue CLI</strong>, <strong>Vite</strong>, or include Vue directly via a CDN for quick prototypes.</p>
+<p>In this section, we’ll cover multiple ways to install and set up Vue.js 3 depending on your project requirements.</p>
+<hr />
+<h2 id="1-installing-vuejs-via-cdn-for-prototyping"><a class="header" href="#1-installing-vuejs-via-cdn-for-prototyping">1. Installing Vue.js via CDN (For Prototyping)</a></h2>
+<p>If you want to quickly prototype a Vue.js application without setting up a full development environment, you can include Vue.js via a CDN. This is the fastest way to get started with Vue without any tooling or build step.</p>
+<h3 id="example-setup-using-vuejs-via-cdn"><a class="header" href="#example-setup-using-vuejs-via-cdn">Example Setup Using Vue.js via CDN</a></h3>
+<p>You can create a basic HTML file and link to Vue.js directly through a CDN.</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Vue.js 3 App&lt;/title&gt;
+  &lt;script src="https://unpkg.com/vue@next"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="app"&gt;
+    {{ message }}
+  &lt;/div&gt;
+
+  &lt;script&gt;
+    const { createApp } = Vue;
+    createApp({
+      data() {
+        return {
+          message: 'Hello, Vue 3!'
+        };
+      }
+    }).mount('#app');
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="advantages-of-cdn-setup"><a class="header" href="#advantages-of-cdn-setup">Advantages of CDN Setup:</a></h3>
+<ul>
+<li><strong>Quick Setup</strong>: No need for a build tool, ideal for simple experiments and prototypes.</li>
+<li><strong>No Build Tools</strong>: You can directly include Vue.js in a script tag and start building right away.</li>
+</ul>
+<h3 id="disadvantages"><a class="header" href="#disadvantages">Disadvantages:</a></h3>
+<ul>
+<li><strong>No Build Optimization</strong>: For production, this is not ideal because it doesn’t include advanced optimizations (minification, code splitting, etc.).</li>
+<li><strong>Limited Scalability</strong>: This approach is not suitable for large, complex applications.</li>
+</ul>
+<hr />
+<h2 id="2-installing-vuejs-with-vue-cli-for-full-scale-projects"><a class="header" href="#2-installing-vuejs-with-vue-cli-for-full-scale-projects">2. Installing Vue.js with Vue CLI (For Full-Scale Projects)</a></h2>
+<p><strong>Vue CLI</strong> is a full-featured project scaffolding tool, offering built-in tools like Vue Router, Vuex, Babel, and more, to create and manage Vue.js applications. It’s a great option for developers building larger, production-ready applications.</p>
+<h3 id="prerequisites"><a class="header" href="#prerequisites">Prerequisites</a></h3>
+<p>Before installing Vue CLI, you need to have <strong>Node.js</strong> installed on your machine. You can download it from <a href="https://nodejs.org/">Node.js official site</a>.</p>
+<h3 id="step-1-install-vue-cli"><a class="header" href="#step-1-install-vue-cli">Step 1: Install Vue CLI</a></h3>
+<p>Install Vue CLI globally using npm or yarn:</p>
+<pre><code class="language-bash">npm install -g @vue/cli
+# OR
+yarn global add @vue/cli
+</code></pre>
+<p>You can verify the installation by running:</p>
+<pre><code class="language-bash">vue --version
+</code></pre>
+<p>This command should display the version of Vue CLI you have installed.</p>
+<h3 id="step-2-create-a-new-vuejs-project"><a class="header" href="#step-2-create-a-new-vuejs-project">Step 2: Create a New Vue.js Project</a></h3>
+<p>Once Vue CLI is installed, you can create a new project with the following command:</p>
+<pre><code class="language-bash">vue create my-vue-app
+</code></pre>
+<p>You’ll be prompted to either use the default setup or manually select features. You can choose the options depending on your needs (e.g., Vue Router, Vuex, TypeScript, etc.).</p>
+<pre><code class="language-bash">? Please pick a preset:
+  Default ([Vue 3] babel, eslint)
+❯ Manually select features
+</code></pre>
+<p>Vue CLI will then scaffold the project, set up necessary configurations, and install dependencies.</p>
+<h3 id="step-3-run-the-development-server"><a class="header" href="#step-3-run-the-development-server">Step 3: Run the Development Server</a></h3>
+<p>After the setup is complete, navigate into the project directory and run the development server:</p>
+<pre><code class="language-bash">cd my-vue-app
+npm run serve
+</code></pre>
+<p>The local development server will start, and you can access your application at <code>http://localhost:8080</code>.</p>
+<h3 id="step-4-build-for-production"><a class="header" href="#step-4-build-for-production">Step 4: Build for Production</a></h3>
+<p>When you’re ready to deploy your project, use the following command to generate optimized production assets:</p>
+<pre><code class="language-bash">npm run build
+</code></pre>
+<p>This will create a <code>dist/</code> directory with minified and optimized files for production.</p>
+<h3 id="advantages-of-vue-cli"><a class="header" href="#advantages-of-vue-cli">Advantages of Vue CLI:</a></h3>
+<ul>
+<li><strong>Feature-Rich</strong>: Supports advanced configurations, Vue Router, Vuex, TypeScript, linting, testing, and more.</li>
+<li><strong>Plugins and GUI</strong>: Easily add or remove features with Vue CLI’s plugin-based architecture, or use the GUI tool for visual management.</li>
+<li><strong>Great for Larger Projects</strong>: Provides a well-structured environment for building large-scale applications.</li>
+</ul>
+<hr />
+<h2 id="3-installing-vuejs-with-vite-for-modern-development"><a class="header" href="#3-installing-vuejs-with-vite-for-modern-development">3. Installing Vue.js with Vite (For Modern Development)</a></h2>
+<p><strong>Vite</strong> is a modern build tool that offers faster startup times and more efficient hot module replacement (HMR) during development. It's a great choice for Vue.js 3 projects due to its speed and simplicity.</p>
+<h3 id="step-1-create-a-new-vite-project"><a class="header" href="#step-1-create-a-new-vite-project">Step 1: Create a New Vite Project</a></h3>
+<p>You can set up a new Vite project for Vue.js 3 by running the following command:</p>
+<pre><code class="language-bash">npm create vite@latest my-vue-app
+</code></pre>
+<p>You’ll be prompted to select a framework. Choose <strong>Vue</strong> or <strong>Vue with TypeScript</strong>, depending on your preference:</p>
+<pre><code class="language-bash">? Select a framework:
+  vanilla
+  vue
+  vue-ts
+  react
+  preact
+  lit
+  svelte
+  others
+</code></pre>
+<h3 id="step-2-install-dependencies"><a class="header" href="#step-2-install-dependencies">Step 2: Install Dependencies</a></h3>
+<p>After generating the project structure, navigate to your project directory and install the necessary dependencies:</p>
+<pre><code class="language-bash">cd my-vue-app
+npm install
+</code></pre>
+<h3 id="step-3-run-the-development-server-1"><a class="header" href="#step-3-run-the-development-server-1">Step 3: Run the Development Server</a></h3>
+<p>Start the development server with:</p>
+<pre><code class="language-bash">npm run dev
+</code></pre>
+<p>Vite’s dev server runs on <code>http://localhost:5173</code> by default, with hot module replacement (HMR) providing instant feedback during development.</p>
+<h3 id="step-4-build-for-production-1"><a class="header" href="#step-4-build-for-production-1">Step 4: Build for Production</a></h3>
+<p>To build your Vite project for production, run:</p>
+<pre><code class="language-bash">npm run build
+</code></pre>
+<p>This will generate the optimized production files in the <code>dist/</code> folder using Rollup under the hood.</p>
+<h3 id="advantages-of-vite"><a class="header" href="#advantages-of-vite">Advantages of Vite:</a></h3>
+<ul>
+<li><strong>Faster Builds</strong>: Vite offers lightning-fast development builds and HMR compared to traditional bundlers.</li>
+<li><strong>Simplicity</strong>: Vite is simpler to set up, with fewer configurations needed for most use cases.</li>
+<li><strong>Efficient for Modern Development</strong>: Ideal for modern, smaller to medium-sized projects or for developers prioritizing fast build times.</li>
+</ul>
+<hr />
+<h2 id="4-installing-vuejs-with-a-package-manager"><a class="header" href="#4-installing-vuejs-with-a-package-manager">4. Installing Vue.js with a Package Manager</a></h2>
+<p>If you’re building a project without using Vue CLI or Vite, you can manually add Vue.js to your existing project using a package manager like npm or yarn.</p>
+<h3 id="step-1-initialize-a-project"><a class="header" href="#step-1-initialize-a-project">Step 1: Initialize a Project</a></h3>
+<p>If you don’t already have a project, initialize one with npm:</p>
+<pre><code class="language-bash">mkdir my-vue-project
+cd my-vue-project
+npm init -y
+</code></pre>
+<h3 id="step-2-install-vue"><a class="header" href="#step-2-install-vue">Step 2: Install Vue</a></h3>
+<p>Install Vue.js via npm or yarn:</p>
+<pre><code class="language-bash">npm install vue@next
+# OR
+yarn add vue@next
+</code></pre>
+<h3 id="step-3-set-up-vue-in-your-project"><a class="header" href="#step-3-set-up-vue-in-your-project">Step 3: Set Up Vue in Your Project</a></h3>
+<p>You can now use Vue in your project by importing it into your JavaScript file and initializing it.</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Vue Setup&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="app"&gt;{{ message }}&lt;/div&gt;
+
+  &lt;script type="module"&gt;
+    import { createApp } from 'vue';
+
+    createApp({
+      data() {
+        return {
+          message: 'Hello, Vue.js 3!'
+        };
+      }
+    }).mount('#app');
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<hr />
+<h2 id="conclusion-3"><a class="header" href="#conclusion-3">Conclusion</a></h2>
+<p>Vue.js offers multiple ways to set up and start building your application depending on your project needs:</p>
+<ul>
+<li><strong>For Prototyping</strong>: Using Vue.js via CDN is the quickest way to get started.</li>
+<li><strong>For Full-Scale Applications</strong>: Vue CLI provides a robust and feature-rich environment for building large and complex applications.</li>
+<li><strong>For Modern Development</strong>: Vite offers blazing-fast development and build times for modern projects, making it a popular choice for Vue 3 apps.</li>
+<li><strong>For Custom Setups</strong>: You can manually install and configure Vue.js in any existing project using npm or yarn.</li>
+</ul>
+<p>Each method has its own strengths, so choose the one that fits your development workflow and project needs.</p>
+<p>In the next chapter, we’ll dive into <strong>Vue.js 3 Composition API</strong> and learn how it revolutionizes component development in Vue 3.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="project-structure"><a class="header" href="#project-structure">Project Structure</a></h1>
+<p>A well-organized project structure is key to maintaining scalability and readability, especially as your Vue.js application grows. Vue.js, whether you are using Vue CLI, Vite, or manually setting up the project, provides flexibility in how you organize your files. However, certain conventions and best practices can help keep your codebase maintainable.</p>
+<p>In this section, we’ll explore a standard Vue.js project structure, discuss each folder’s purpose, and share tips for organizing your Vue components, assets, and more.</p>
+<hr />
+<h2 id="default-project-structure-vue-cli"><a class="header" href="#default-project-structure-vue-cli">Default Project Structure (Vue CLI)</a></h2>
+<p>When you create a Vue project using Vue CLI, you’ll get a standard folder structure that looks something like this:</p>
+<pre><code>my-vue-app/
+│
+├── node_modules/        # Installed dependencies
+├── public/              # Public assets (served as-is)
+│   └── index.html       # Entry point HTML
+├── src/                 # Main source folder for the application
+│   ├── assets/          # Static assets (images, CSS, fonts, etc.)
+│   ├── components/      # Vue components
+│   ├── views/           # View components (for router-based applications)
+│   ├── router/          # Vue Router configuration
+│   ├── store/           # Vuex store (optional, for state management)
+│   ├── App.vue          # Root component
+│   └── main.js          # Entry point JavaScript file
+│
+├── .gitignore           # Files to be ignored by Git
+├── babel.config.js      # Babel configuration (if using Babel)
+├── package.json         # Project metadata and dependencies
+├── README.md            # Project documentation
+├── vue.config.js        # Vue CLI configuration file (optional)
+└── yarn.lock or package-lock.json  # Package manager lock file
+</code></pre>
+<h3 id="overview-of-key-folders-and-files"><a class="header" href="#overview-of-key-folders-and-files">Overview of Key Folders and Files:</a></h3>
+<ul>
+<li>
+<p><strong>node_modules/</strong>: This folder contains all the dependencies installed via npm or yarn. You usually don't modify anything inside it manually.</p>
+</li>
+<li>
+<p><strong>public/</strong>: Contains static files like the <code>index.html</code>, which acts as the main entry point for your app. Any file placed in this folder will be served directly without being processed by Webpack or Vite.</p>
+<ul>
+<li><code>index.html</code>: This file is the root HTML template that the Vue.js application is injected into. You can modify the head section here to include meta tags, scripts, or styles.</li>
+</ul>
+</li>
+<li>
+<p><strong>src/</strong>: This is the heart of your Vue.js application. All of your components, assets, and configuration files live here.</p>
+<ul>
+<li>
+<p><strong>assets/</strong>: This folder is where you store static assets like images, fonts, or custom CSS files. Unlike the <code>public/</code> folder, assets here will be processed by the build tool (Webpack or Vite), allowing you to reference them with dynamic imports or asset URLs.</p>
+</li>
+<li>
+<p><strong>components/</strong>: This is where your reusable Vue components go. Each component typically contains its template, logic, and styles in a single file (<code>.vue</code>).</p>
+</li>
+<li>
+<p><strong>views/</strong>: When using Vue Router, this folder contains the components that correspond to different pages or views in your application. These are usually the components that you navigate between using the router.</p>
+</li>
+<li>
+<p><strong>router/</strong>: This folder contains your Vue Router configuration. Vue Router handles the client-side routing of your application, allowing you to create navigation without reloading the page.</p>
+</li>
+<li>
+<p><strong>store/</strong>: If you’re using Vuex for state management, this folder contains your Vuex store and modules. Vuex centralizes the application's state management and provides patterns for managing and updating state across components.</p>
+</li>
+<li>
+<p><strong>App.vue</strong>: This is the root component of your Vue.js application. It acts as a wrapper for all other components and is mounted to the DOM in the <code>index.html</code> file.</p>
+</li>
+<li>
+<p><strong>main.js</strong>: This is the entry point of your Vue application. It’s where the Vue instance is created and where global settings (like plugins, routing, or Vuex) are initialized.</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="default-project-structure-vite"><a class="header" href="#default-project-structure-vite">Default Project Structure (Vite)</a></h2>
+<p>The project structure when using <strong>Vite</strong> is similar to Vue CLI, but it is more minimal by default. A typical Vite-based Vue project looks like this:</p>
+<pre><code>my-vue-app/
+│
+├── node_modules/        # Installed dependencies
+├── public/              # Public assets (served as-is)
+│   └── index.html       # Entry point HTML
+├── src/                 # Main source folder for the application
+│   ├── assets/          # Static assets (images, CSS, fonts, etc.)
+│   ├── components/      # Vue components
+│   ├── views/           # View components (optional, for Vue Router)
+│   ├── App.vue          # Root component
+│   └── main.js          # Entry point JavaScript file
+│
+├── .gitignore           # Files to be ignored by Git
+├── package.json         # Project metadata and dependencies
+├── README.md            # Project documentation
+└── vite.config.js       # Vite configuration file
+</code></pre>
+<p>Vite’s structure is simpler because it doesn’t come with Vuex or Vue Router by default. You add those dependencies later as needed. Other than that, the structure of the <code>src/</code> folder follows the same organization as Vue CLI.</p>
+<hr />
+<h2 id="organizing-components"><a class="header" href="#organizing-components">Organizing Components</a></h2>
+<p>Vue.js applications often consist of many components. As your app grows, it’s important to organize your components logically to keep the project maintainable.</p>
+<h3 id="common-practices"><a class="header" href="#common-practices">Common Practices:</a></h3>
+<ol>
+<li>
+<p><strong>Flat Structure for Small Projects</strong>:
+If your project is small, keeping all your components in the <code>components/</code> folder may be sufficient. Just ensure that each component has a clear name that reflects its purpose.</p>
+<pre><code>src/
+├── components/
+│   ├── Header.vue
+│   ├── Footer.vue
+│   ├── Button.vue
+│   └── Modal.vue
+</code></pre>
+</li>
+<li>
+<p><strong>Modular Structure for Larger Projects</strong>:
+For larger projects, consider organizing components into subfolders based on their function or the feature they belong to. For example, group components by page, feature, or type.</p>
+<pre><code>src/
+├── components/
+│   ├── common/
+│   │   ├── Button.vue
+│   │   └── Modal.vue
+│   ├── layout/
+│   │   ├── Header.vue
+│   │   └── Footer.vue
+│   ├── dashboard/
+│   │   ├── DashboardHeader.vue
+│   │   └── DashboardCard.vue
+└── views/
+    ├── Dashboard.vue
+    ├── Profile.vue
+    └── Settings.vue
+</code></pre>
+</li>
+<li>
+<p><strong>Using Feature Folders</strong>:
+Another approach is to organize components by feature or module. This is especially useful for large applications where different teams or developers might work on separate features.</p>
+<pre><code>src/
+├── features/
+│   ├── authentication/
+│   │   ├── Login.vue
+│   │   └── Register.vue
+│   ├── dashboard/
+│   │   ├── Dashboard.vue
+│   │   └── DashboardStats.vue
+│   └── profile/
+│       ├── Profile.vue
+│       └── EditProfile.vue
+</code></pre>
+</li>
+</ol>
+<hr />
+<h2 id="organizing-assets"><a class="header" href="#organizing-assets">Organizing Assets</a></h2>
+<p>Assets like images, fonts, or global styles can be placed in the <code>assets/</code> folder. Here are some common practices for organizing assets:</p>
+<ol>
+<li>
+<p><strong>Images</strong>: Group images by feature or type.</p>
+<pre><code>src/
+├── assets/
+│   ├── images/
+│   │   ├── logo.png
+│   │   ├── banners/
+│   │   │   ├── home-banner.jpg
+│   │   │   └── about-banner.jpg
+│   │   └── icons/
+│   │       └── search-icon.svg
+</code></pre>
+</li>
+<li>
+<p><strong>Styles</strong>: Place your global stylesheets or SCSS files in the <code>assets/styles/</code> folder.</p>
+<pre><code>src/
+├── assets/
+│   ├── styles/
+│   │   ├── main.css
+│   │   ├── variables.scss
+│   │   └── mixins.scss
+</code></pre>
+</li>
+<li>
+<p><strong>Fonts</strong>: If your project uses custom fonts, you can place them in an organized <code>fonts/</code> folder.</p>
+<pre><code>src/
+├── assets/
+│   ├── fonts/
+│   │   ├── Roboto-Regular.ttf
+│   │   └── OpenSans-Bold.ttf
+</code></pre>
+</li>
+</ol>
+<hr />
+<h2 id="configuration-files"><a class="header" href="#configuration-files">Configuration Files</a></h2>
+<p>Vue.js projects typically include several configuration files, such as:</p>
+<ul>
+<li><strong>babel.config.js</strong>: If you're using Babel for transpiling modern JavaScript, this file contains Babel’s configuration.</li>
+<li><strong>vue.config.js</strong>: For projects using Vue CLI, this file allows you to configure various aspects of your Vue project, including Webpack configurations, CSS pre-processors, and more.</li>
+<li><strong>vite.config.js</strong>: For Vite-based projects, this file holds configuration options for Vite, including custom plugins, server settings, and build configurations.</li>
+</ul>
+<hr />
+<h2 id="best-practices-for-project-structure"><a class="header" href="#best-practices-for-project-structure">Best Practices for Project Structure</a></h2>
+<ol>
+<li><strong>Keep It Modular</strong>: Break down your application into small, reusable components and organize them logically. Avoid having monolithic files or directories.</li>
+<li><strong>Consistent Naming</strong>: Use clear, descriptive, and consistent naming conventions for components, assets, and files.
+3</li>
+</ol>
+<p>. <strong>Feature-Based Organization</strong>: For larger applications, consider organizing by features or modules rather than type, allowing for better collaboration and separation of concerns.
+4. <strong>Separate Concerns</strong>: Keep different concerns separate. For example, store your assets in the <code>assets/</code> folder, and keep logic (JavaScript) separate from presentation (CSS).
+5. <strong>Version Control</strong>: Ensure that sensitive information or build artifacts (e.g., <code>dist/</code>, <code>node_modules/</code>) are excluded from version control via <code>.gitignore</code>.</p>
+<hr />
+<h2 id="conclusion-4"><a class="header" href="#conclusion-4">Conclusion</a></h2>
+<p>A well-organized project structure is critical to maintaining a clean, scalable, and manageable Vue.js application. Whether you’re using <strong>Vue CLI</strong> or <strong>Vite</strong>, the default structure provides a solid starting point, but you should always aim to adapt it to suit your project’s size and complexity.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="implementing-a-full-scale-project"><a class="header" href="#implementing-a-full-scale-project">Implementing a Full-Scale Project</a></h1>
+<h2 id="overview"><a class="header" href="#overview">Overview:</a></h2>
+<p>In this assignment, you will be tasked with implementing a complete project using <strong>Vue.js 3</strong>. The project should showcase your understanding of Vue.js concepts such as <strong>components</strong>, <strong>directives</strong>, <strong>routing</strong>, and <strong>project structure</strong>. You will also incorporate Vue.js performance optimization techniques and ensure the project is well-organized and scalable.</p>
+<hr />
+<h1 id="project-requirements"><a class="header" href="#project-requirements">Project Requirements:</a></h1>
+<p>You are required to implement a <strong>Single-Page Application (SPA)</strong> that includes the following key features:</p>
+<h2 id="1-project-setup"><a class="header" href="#1-project-setup">1. <strong>Project Setup</strong></a></h2>
+<ul>
+<li>Set up your Vue.js project using either <strong>Vue CLI</strong> or <strong>Vite</strong>.</li>
+<li>Use <strong>Vue Router</strong> for client-side routing to handle multiple views/pages.</li>
+<li>Include at least 3 main views/pages:
+<ul>
+<li><strong>Home Page</strong></li>
+<li><strong>About Page</strong></li>
+<li><strong>Contact Page</strong></li>
+</ul>
+</li>
+<li>Install <strong>Vuex</strong> (optional) or manage state across components using the <strong>Composition API</strong> if the app requires global state management.</li>
+</ul>
+<hr />
+<h2 id="2-components"><a class="header" href="#2-components">2. <strong>Components</strong></a></h2>
+<ul>
+<li>Create reusable <strong>Vue components</strong> for the different sections of your application.
+<ul>
+<li>Example components: <code>Navbar.vue</code>, <code>Footer.vue</code>, <code>Card.vue</code>, <code>Form.vue</code>, etc.</li>
+</ul>
+</li>
+<li>Use <strong>props</strong> and <strong>emits</strong> to manage data flow between components.</li>
+</ul>
+<h3 id="tasks"><a class="header" href="#tasks">Tasks:</a></h3>
+<ol>
+<li>Implement a <strong>navbar</strong> and <strong>footer</strong> that are included in all views.</li>
+<li>Create a reusable <strong>card component</strong> to display items or content dynamically.</li>
+<li>Build a <strong>form component</strong> for handling user input on the Contact page, with form validation.</li>
+</ol>
+<hr />
+<h2 id="3-vue-directives"><a class="header" href="#3-vue-directives">3. <strong>Vue Directives</strong></a></h2>
+<ul>
+<li>Utilize built-in Vue directives such as <code>v-if</code>, <code>v-for</code>, <code>v-model</code>, <code>v-bind</code>, and <code>v-on</code> where necessary.</li>
+<li>Implement at least one <strong>custom directive</strong>. For example:
+<ul>
+<li>A directive that automatically focuses on an input field when the page loads.</li>
+<li>A directive that changes the background color of a component based on a condition.</li>
+</ul>
+</li>
+</ul>
+<h3 id="tasks-1"><a class="header" href="#tasks-1">Tasks:</a></h3>
+<ol>
+<li>Use <strong>v-if</strong> and <strong>v-for</strong> in the views to conditionally render components and loop through data.</li>
+<li>Implement a <strong>custom directive</strong> that enhances the user experience in one part of your application.</li>
+</ol>
+<hr />
+<h2 id="4-routing"><a class="header" href="#4-routing">4. <strong>Routing</strong></a></h2>
+<ul>
+<li>Implement <strong>Vue Router</strong> for seamless navigation between pages (e.g., Home, About, Contact).</li>
+<li>Use <strong>route parameters</strong> and <strong>lazy loading</strong> to optimize the application.</li>
+<li>Handle <strong>404 Not Found</strong> pages with a custom error view.</li>
+</ul>
+<h3 id="tasks-2"><a class="header" href="#tasks-2">Tasks:</a></h3>
+<ol>
+<li>Create at least three main routes for your views: Home, About, and Contact.</li>
+<li>Use <strong>lazy loading</strong> to load components only when needed.</li>
+<li>Implement navigation guards (if applicable) to control access to certain pages (optional).</li>
+</ol>
+<hr />
+<h2 id="5-form-handling-and-validation"><a class="header" href="#5-form-handling-and-validation">5. <strong>Form Handling and Validation</strong></a></h2>
+<ul>
+<li>On the <strong>Contact Page</strong>, create a form that allows users to submit their name, email, and a message.</li>
+<li>Use <strong>v-model</strong> for two-way binding of form inputs.</li>
+<li>Implement form validation to ensure that all fields are filled correctly before submission (e.g., email format validation).</li>
+<li>Provide feedback to the user (e.g., success message, error message) after form submission.</li>
+</ul>
+<h3 id="tasks-3"><a class="header" href="#tasks-3">Tasks:</a></h3>
+<ol>
+<li>Build a form using Vue.js components.</li>
+<li>Use <strong>v-model</strong> for form data binding.</li>
+<li>Implement <strong>form validation</strong> and ensure proper error handling and feedback.</li>
+</ol>
+<hr />
+<h2 id="6-state-management-optional"><a class="header" href="#6-state-management-optional">6. <strong>State Management (Optional)</strong></a></h2>
+<ul>
+<li>If your application has global state requirements, implement <strong>Vuex</strong> or use the <strong>Composition API</strong> to manage state across different components.</li>
+<li>For example, if the user logs in or interacts with content that affects multiple views, manage this state globally.</li>
+</ul>
+<h3 id="tasks-4"><a class="header" href="#tasks-4">Tasks:</a></h3>
+<ol>
+<li>Use Vuex for centralized state management (optional).</li>
+<li>Alternatively, use the Composition API to handle shared state across components.</li>
+</ol>
+<hr />
+<h2 id="7-project-structure"><a class="header" href="#7-project-structure">7. <strong>Project Structure</strong></a></h2>
+<ul>
+<li>Follow best practices for <strong>organizing your project</strong>. Ensure that your components, views, and assets are organized in a logical manner.</li>
+</ul>
+<h3 id="suggested-structure"><a class="header" href="#suggested-structure">Suggested Structure:</a></h3>
+<pre><code>my-vue-app/
+├── public/
+│   └── index.html
+├── src/
+│   ├── assets/
+│   │   ├── images/
+│   │   └── styles/
+│   ├── components/
+│   │   ├── Navbar.vue
+│   │   ├── Footer.vue
+│   │   └── Card.vue
+│   ├── views/
+│   │   ├── Home.vue
+│   │   ├── About.vue
+│   │   └── Contact.vue
+│   ├── router/
+│   │   └── index.js
+│   ├── App.vue
+│   └── main.js
+├── package.json
+└── README.md
+</code></pre>
+<hr />
+<h2 id="8-performance-optimization"><a class="header" href="#8-performance-optimization">8. <strong>Performance Optimization</strong></a></h2>
+<ul>
+<li>Optimize your application by using techniques like:
+<ul>
+<li><strong>Lazy loading</strong> of components using Vue Router.</li>
+<li>Using the <strong>v-once</strong> directive to prevent unnecessary re-renders of static content.</li>
+<li>Implementing <strong>key-based rendering</strong> in lists using <code>v-for</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="tasks-5"><a class="header" href="#tasks-5">Tasks:</a></h3>
+<ol>
+<li>Ensure that large components are loaded lazily to reduce initial page load time.</li>
+<li>Use <strong>v-once</strong> to prevent static components from re-rendering unnecessarily.</li>
+</ol>
+<hr />
+<h2 id="9-styling-and-responsiveness"><a class="header" href="#9-styling-and-responsiveness">9. <strong>Styling and Responsiveness</strong></a></h2>
+<ul>
+<li>Ensure that your application is <strong>fully responsive</strong> and adapts well to different screen sizes.</li>
+<li>Use <strong>CSS</strong> or a <strong>pre-processor</strong> (like SCSS) to style your components.</li>
+<li>Consider using a <strong>CSS framework</strong> like Bootstrap or Tailwind for easier responsiveness (optional).</li>
+</ul>
+<h3 id="tasks-6"><a class="header" href="#tasks-6">Tasks:</a></h3>
+<ol>
+<li>Ensure that all views and components are responsive and mobile-friendly.</li>
+<li>Implement consistent styling across all components and views.</li>
+</ol>
+<hr />
+<h2 id="10-deployment-optional"><a class="header" href="#10-deployment-optional">10. <strong>Deployment (Optional)</strong></a></h2>
+<ul>
+<li>Deploy your Vue.js application to a platform like <strong>Netlify</strong>, <strong>Vercel</strong>, or <strong>GitHub Pages</strong>.</li>
+<li>Make sure that your deployed application is accessible and functional in a production environment.</li>
+</ul>
+<h3 id="tasks-7"><a class="header" href="#tasks-7">Tasks:</a></h3>
+<ol>
+<li>Deploy your application using Netlify, Vercel, or another platform of your choice.</li>
+<li>Share the URL to your live application.</li>
+</ol>
+<hr />
+<h1 id="submission"><a class="header" href="#submission">Submission:</a></h1>
+<ul>
+<li>Submit a <strong>GitHub repository</strong> with your project code.</li>
+<li>Ensure the repository includes a <strong>README</strong> file explaining how to set up and run the project, including a brief description of the project’s features.</li>
+<li>(Optional) Share the <strong>live URL</strong> if the project is deployed online.</li>
+</ul>
+<h1 id="evaluation-criteria"><a class="header" href="#evaluation-criteria">Evaluation Criteria:</a></h1>
+<ul>
+<li><strong>Code Quality</strong>: Well-structured, clean, and readable code.</li>
+<li><strong>Component Reusability</strong>: Efficient use of Vue components with clear separation of concerns.</li>
+<li><strong>Directives Usage</strong>: Correct usage of built-in and custom directives.</li>
+<li><strong>Routing and Navigation</strong>: Smooth navigation between views with proper route handling.</li>
+<li><strong>Performance Optimization</strong>: Efficient use of lazy loading, key-based rendering, and static content rendering.</li>
+<li><strong>Responsiveness</strong>: The application should be fully responsive and adapt well to different screen sizes.</li>
+<li><strong>Form Handling</strong>: Proper implementation of form data handling and validation.</li>
+</ul>
+<hr />
+<p>By completing this assignment, you will have a solid understanding of how to implement a full-featured <strong>Single-Page Application (SPA)</strong> using <strong>Vue.js 3</strong>, showcasing your skills in components, directives, routing, state management, and performance optimization.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="implementing-a-multi-page-application"><a class="header" href="#implementing-a-multi-page-application">Implementing a Multi-Page Application</a></h1>
+<h2 id="overview-1"><a class="header" href="#overview-1">Overview:</a></h2>
+<p>In this assignment, you will be tasked with implementing a <strong>Multi-Page Application (MPA)</strong> using <strong>Vue.js 3</strong>. Unlike a Single-Page Application (SPA), each page will be loaded separately and rendered on the server. Your project should focus on building individual pages, integrating Vue.js for component-based rendering, and optimizing the user experience through Vue.js concepts such as <strong>components</strong>, <strong>directives</strong>, and <strong>state management</strong>.</p>
+<hr />
+<h1 id="project-requirements-1"><a class="header" href="#project-requirements-1">Project Requirements:</a></h1>
+<p>You are required to build a <strong>Multi-Page Application</strong> that includes the following key features:</p>
+<h2 id="1-project-setup-1"><a class="header" href="#1-project-setup-1">1. <strong>Project Setup</strong></a></h2>
+<ul>
+<li>Set up your Vue.js project using <strong>Vue CLI</strong> or <strong>Vite</strong>.</li>
+<li>Each page should be a separate HTML file served from the backend (e.g., with a framework like Express.js or any static site generator).</li>
+<li>Integrate Vue.js on each page to manage UI components and interactions.</li>
+<li>Include at least 3 main pages:
+<ul>
+<li><strong>Home Page</strong></li>
+<li><strong>Services Page</strong></li>
+<li><strong>Contact Page</strong></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="2-components-1"><a class="header" href="#2-components-1">2. <strong>Components</strong></a></h2>
+<ul>
+<li>Create reusable <strong>Vue components</strong> that are used across different pages of your application.
+<ul>
+<li>Example components: <code>Header.vue</code>, <code>Footer.vue</code>, <code>Button.vue</code>, etc.</li>
+</ul>
+</li>
+<li>Use <strong>props</strong> and <strong>emits</strong> to manage data flow between components.</li>
+</ul>
+<h3 id="tasks-8"><a class="header" href="#tasks-8">Tasks:</a></h3>
+<ol>
+<li>Implement a <strong>header</strong> and <strong>footer</strong> component that is included on all pages.</li>
+<li>Create a reusable <strong>button component</strong> for performing actions across multiple pages (e.g., submitting a form, navigating to another page).</li>
+<li>Build a <strong>modal component</strong> for displaying additional information or prompts on the Services page.</li>
+</ol>
+<hr />
+<h2 id="3-vue-directives-1"><a class="header" href="#3-vue-directives-1">3. <strong>Vue Directives</strong></a></h2>
+<ul>
+<li>Utilize Vue’s built-in directives like <code>v-if</code>, <code>v-for</code>, <code>v-model</code>, <code>v-bind</code>, and <code>v-on</code> across different pages.</li>
+<li>Implement at least one <strong>custom directive</strong>. For example:
+<ul>
+<li>A directive to highlight a section when it comes into view.</li>
+<li>A directive that toggles an element's visibility based on a condition.</li>
+</ul>
+</li>
+</ul>
+<h3 id="tasks-9"><a class="header" href="#tasks-9">Tasks:</a></h3>
+<ol>
+<li>Use <strong>v-if</strong> and <strong>v-for</strong> to conditionally render components and loop through data across different pages.</li>
+<li>Implement a <strong>custom directive</strong> to enhance the user experience, such as animating a section or auto-scrolling to a specific part of the page.</li>
+</ol>
+<hr />
+<h2 id="4-form-handling-and-validation"><a class="header" href="#4-form-handling-and-validation">4. <strong>Form Handling and Validation</strong></a></h2>
+<ul>
+<li>On the <strong>Contact Page</strong>, create a form for user inputs (e.g., name, email, and message).</li>
+<li>Use <strong>v-model</strong> for two-way binding of form inputs.</li>
+<li>Implement form validation to ensure all fields are filled out correctly (e.g., email format validation).</li>
+<li>Provide user feedback after form submission (e.g., success or error messages).</li>
+</ul>
+<h3 id="tasks-10"><a class="header" href="#tasks-10">Tasks:</a></h3>
+<ol>
+<li>Build a contact form using Vue.js components.</li>
+<li>Implement <strong>v-model</strong> for form data binding.</li>
+<li>Include <strong>form validation</strong> and provide feedback after submission.</li>
+</ol>
+<hr />
+<h2 id="5-state-management-optional"><a class="header" href="#5-state-management-optional">5. <strong>State Management (Optional)</strong></a></h2>
+<ul>
+<li>If your application has global state requirements, manage the state using either <strong>Vuex</strong> or the <strong>Composition API</strong>.</li>
+<li>For example, use Vuex to track user preferences or form data across different pages.</li>
+</ul>
+<h3 id="tasks-11"><a class="header" href="#tasks-11">Tasks:</a></h3>
+<ol>
+<li>Use Vuex for centralized state management across pages (optional).</li>
+<li>Alternatively, use the Composition API to handle shared state.</li>
+</ol>
+<hr />
+<h2 id="6-project-structure"><a class="header" href="#6-project-structure">6. <strong>Project Structure</strong></a></h2>
+<ul>
+<li>Follow best practices for <strong>organizing your project</strong>. Ensure that your components, assets, and views are structured logically.</li>
+</ul>
+<h3 id="suggested-structure-1"><a class="header" href="#suggested-structure-1">Suggested Structure:</a></h3>
+<pre><code>my-mpa-project/
+├── public/
+│   ├── index.html (Home page)
+│   ├── services.html
+│   ├── contact.html
+├── src/
+│   ├── assets/
+│   │   ├── images/
+│   │   └── styles/
+│   ├── components/
+│   │   ├── Header.vue
+│   │   ├── Footer.vue
+│   │   └── Button.vue
+│   ├── views/
+│   │   ├── Home.vue
+│   │   ├── Services.vue
+│   │   └── Contact.vue
+│   ├── App.vue
+│   └── main.js
+├── package.json
+└── README.md
+</code></pre>
+<hr />
+<h2 id="7-performance-optimization"><a class="header" href="#7-performance-optimization">7. <strong>Performance Optimization</strong></a></h2>
+<ul>
+<li>Optimize your MPA by improving the performance of each page. Use Vue.js optimization techniques such as:
+<ul>
+<li>Using the <strong>v-once</strong> directive to prevent unnecessary re-renders of static content.</li>
+<li>Implementing <strong>lazy loading</strong> of large components or media on specific pages.</li>
+</ul>
+</li>
+</ul>
+<h3 id="tasks-12"><a class="header" href="#tasks-12">Tasks:</a></h3>
+<ol>
+<li>Use <strong>v-once</strong> to prevent re-renders of static sections on your pages.</li>
+<li>Use <strong>lazy loading</strong> to load heavy media or large components only when needed.</li>
+</ol>
+<hr />
+<h2 id="8-styling-and-responsiveness"><a class="header" href="#8-styling-and-responsiveness">8. <strong>Styling and Responsiveness</strong></a></h2>
+<ul>
+<li>Ensure that your application is <strong>fully responsive</strong> and adapts to different screen sizes.</li>
+<li>Use <strong>CSS</strong> or a <strong>pre-processor</strong> (like SCSS) for styling.</li>
+<li>Consider using a <strong>CSS framework</strong> like Bootstrap or Tailwind CSS for faster development (optional).</li>
+</ul>
+<h3 id="tasks-13"><a class="header" href="#tasks-13">Tasks:</a></h3>
+<ol>
+<li>Ensure that all pages are responsive and mobile-friendly.</li>
+<li>Implement consistent styling across all pages and components.</li>
+</ol>
+<hr />
+<h2 id="9-deployment-optional"><a class="header" href="#9-deployment-optional">9. <strong>Deployment (Optional)</strong></a></h2>
+<ul>
+<li>Deploy your application using a platform like <strong>Netlify</strong>, <strong>Vercel</strong>, or <strong>GitHub Pages</strong>.</li>
+<li>Ensure the application is accessible and functional in a production environment.</li>
+</ul>
+<h3 id="tasks-14"><a class="header" href="#tasks-14">Tasks:</a></h3>
+<ol>
+<li>Deploy your application using the platform of your choice.</li>
+<li>Share the URL to your live application.</li>
+</ol>
+<hr />
+<h1 id="submission-1"><a class="header" href="#submission-1">Submission:</a></h1>
+<ul>
+<li>Submit a <strong>GitHub repository</strong> containing your project code.</li>
+<li>Ensure the repository includes a <strong>README</strong> file explaining how to set up and run the project, and a brief description of its features.</li>
+<li>(Optional) Share the <strong>live URL</strong> if the project is deployed.</li>
+</ul>
+<h1 id="evaluation-criteria-1"><a class="header" href="#evaluation-criteria-1">Evaluation Criteria:</a></h1>
+<ul>
+<li><strong>Code Quality</strong>: Clean, structured, and maintainable code.</li>
+<li><strong>Component Reusability</strong>: Efficient use of Vue components across multiple pages.</li>
+<li><strong>Directives Usage</strong>: Correct usage of built-in and custom directives.</li>
+<li><strong>Form Handling</strong>: Proper form data binding, validation, and feedback.</li>
+<li><strong>Performance Optimization</strong>: Efficient handling of static content and lazy loading of heavy elements.</li>
+<li><strong>Responsiveness</strong>: The application should be fully responsive across different screen sizes.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="understanding-components"><a class="header" href="#understanding-components">Understanding Components</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="single-file-components-sfcs"><a class="header" href="#single-file-components-sfcs">Single File Components (SFCs)</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="component-registration"><a class="header" href="#component-registration">Component Registration</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="template-syntax-and-interpolation"><a class="header" href="#template-syntax-and-interpolation">Template Syntax and Interpolation</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="embedding-javascript-expressions"><a class="header" href="#embedding-javascript-expressions">Embedding JavaScript Expressions</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="template-vs-jsx-in-vue"><a class="header" href="#template-vs-jsx-in-vue">Template vs JSX in Vue</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="task"><a class="header" href="#task">Task</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="using-props-in-components"><a class="header" href="#using-props-in-components">Using Props in Components</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="props-in-vue"><a class="header" href="#props-in-vue">Props in Vue</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="validating-props"><a class="header" href="#validating-props">Validating Props</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="task-1"><a class="header" href="#task-1">Task</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="styling-and-media-in-vuejs"><a class="header" href="#styling-and-media-in-vuejs">Styling and Media in Vue.js</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="integrating-tailwind-with-vuejs-vite"><a class="header" href="#integrating-tailwind-with-vuejs-vite">Integrating Tailwind with Vue.js (Vite)</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="working-with-images-in-vue-components"><a class="header" href="#working-with-images-in-vue-components">Working with Images in Vue Components</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="using-vue-svg-icons"><a class="header" href="#using-vue-svg-icons">Using Vue SVG Icons</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="task-2"><a class="header" href="#task-2">Task</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rendering-multiple-components"><a class="header" href="#rendering-multiple-components">Rendering Multiple Components</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="scoped-styles"><a class="header" href="#scoped-styles">Scoped Styles</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="inline-styles-in-vue"><a class="header" href="#inline-styles-in-vue">Inline Styles in Vue</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="external-css-files"><a class="header" href="#external-css-files">External CSS Files</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="css-modules-in-vuejs"><a class="header" href="#css-modules-in-vuejs">CSS Modules in Vue.js</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vue-styling-libraries"><a class="header" href="#vue-styling-libraries">Vue Styling Libraries</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="task-3"><a class="header" href="#task-3">Task</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="introduction-to-composition-api"><a class="header" href="#introduction-to-composition-api">Introduction to Composition API</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="composition-api-vs-options-api"><a class="header" href="#composition-api-vs-options-api">Composition API vs. Options API</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reactive-state-with-ref-and-reactive"><a class="header" href="#reactive-state-with-ref-and-reactive">Reactive State with ref and reactive</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="data-flow-in-vue"><a class="header" href="#data-flow-in-vue">Data Flow in Vue</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="task-4"><a class="header" href="#task-4">Task</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="working-with-lifecycle-hooks"><a class="header" href="#working-with-lifecycle-hooks">Working with Lifecycle Hooks</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="lifecycle-hooks"><a class="header" href="#lifecycle-hooks">Lifecycle Hooks</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dependency-arrays-with-watch-and-watcheffect"><a class="header" href="#dependency-arrays-with-watch-and-watcheffect">Dependency Arrays with watch and watchEffect</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cleaning-up-effects"><a class="header" href="#cleaning-up-effects">Cleaning Up Effects</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="task-5"><a class="header" href="#task-5">Task</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dynamic-rendering-in-vuejs"><a class="header" href="#dynamic-rendering-in-vuejs">Dynamic Rendering in Vue.js</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rendering-lists-with-v-for"><a class="header" href="#rendering-lists-with-v-for">Rendering Lists with v-for</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="conditional-rendering-with-v-if-v-else-if-v-else"><a class="header" href="#conditional-rendering-with-v-if-v-else-if-v-else">Conditional Rendering with v-if, v-else-if, v-else</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="short-circuit-rendering"><a class="header" href="#short-circuit-rendering">Short-Circuit Rendering</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="if-else-pattern-in-vue"><a class="header" href="#if-else-pattern-in-vue">If-Else Pattern in Vue</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="task-6"><a class="header" href="#task-6">Task</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="controlled-vs-uncontrolled-forms-in-vue"><a class="header" href="#controlled-vs-uncontrolled-forms-in-vue">Controlled vs. Uncontrolled Forms in Vue</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="handling-forms-with-v-model"><a class="header" href="#handling-forms-with-v-model">Handling Forms with v-model</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="event-handling"><a class="header" href="#event-handling">Event Handling</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="accessing-event-arguments"><a class="header" href="#accessing-event-arguments">Accessing Event Arguments</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="handling-intensive-events"><a class="header" href="#handling-intensive-events">Handling Intensive Events</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="task-7"><a class="header" href="#task-7">Task</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="routing-in-vuejs-vue-router"><a class="header" href="#routing-in-vuejs-vue-router">Routing in Vue.js (Vue Router)</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vue-router-overview"><a class="header" href="#vue-router-overview">Vue Router Overview</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="setting-up-vue-router"><a class="header" href="#setting-up-vue-router">Setting up Vue Router</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vue-router-basics"><a class="header" href="#vue-router-basics">Vue Router Basics</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="internal-and-external-navigation"><a class="header" href="#internal-and-external-navigation">Internal and External Navigation</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="task-8"><a class="header" href="#task-8">Task</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="class-based-vs-functional-components-in-vue"><a class="header" href="#class-based-vs-functional-components-in-vue">Class-based vs. Functional Components in Vue</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="functional-components"><a class="header" href="#functional-components">Functional Components</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="component-constructor"><a class="header" href="#component-constructor">Component Constructor</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="functional-vs-class-components"><a class="header" href="#functional-vs-class-components">Functional vs Class Components</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="handling-props-in-class-components"><a class="header" href="#handling-props-in-class-components">Handling Props in Class Components</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="managing-state-in-class-components"><a class="header" href="#managing-state-in-class-components">Managing State in Class Components</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="task-9"><a class="header" href="#task-9">Task</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vuejs-lifecycle-hooks-and-reactive-state-management"><a class="header" href="#vuejs-lifecycle-hooks-and-reactive-state-management">Vue.js Lifecycle Hooks and Reactive State Management</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vue-lifecycle-hooks"><a class="header" href="#vue-lifecycle-hooks">Vue Lifecycle Hooks</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reactive-state-updates"><a class="header" href="#reactive-state-updates">Reactive State Updates</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="managing-state"><a class="header" href="#managing-state">Managing State</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="task-10"><a class="header" href="#task-10">Task</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="state-management-in-vue-vuex--provideinject"><a class="header" href="#state-management-in-vue-vuex--provideinject">State Management in Vue (Vuex &amp; Provide/Inject)</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="passing-props-and-data"><a class="header" href="#passing-props-and-data">Passing Props and Data</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="managing-global-state-with-vuex"><a class="header" href="#managing-global-state-with-vuex">Managing Global State with Vuex</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="provideinject-api"><a class="header" href="#provideinject-api">Provide/Inject API</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="task-11"><a class="header" href="#task-11">Task</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="higher-order-components-and-mixins"><a class="header" href="#higher-order-components-and-mixins">Higher-Order Components and Mixins</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="higher-order-components"><a class="header" href="#higher-order-components">Higher-Order Components</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="use-cases-for-higher-order-components"><a class="header" href="#use-cases-for-higher-order-components">Use Cases for Higher-Order Components</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="creating-higher-order-components"><a class="header" href="#creating-higher-order-components">Creating Higher-Order Components</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="using-mixins"><a class="header" href="#using-mixins">Using Mixins</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="task-12"><a class="header" href="#task-12">Task</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="error-handling-in-vuejs"><a class="header" href="#error-handling-in-vuejs">Error Handling in Vue.js</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="global-error-handling"><a class="header" href="#global-error-handling">Global Error Handling</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="error-boundaries-with-errorcaptured"><a class="header" href="#error-boundaries-with-errorcaptured">Error Boundaries with errorCaptured</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="use-cases-for-error-handling"><a class="header" href="#use-cases-for-error-handling">Use Cases for Error Handling</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="task-13"><a class="header" href="#task-13">Task</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="advanced-composition-api-techniques"><a class="header" href="#advanced-composition-api-techniques">Advanced Composition API Techniques</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="computed-properties"><a class="header" href="#computed-properties">Computed Properties</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="watch-and-watcheffect"><a class="header" href="#watch-and-watcheffect">watch and watchEffect</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="memoization-in-vue"><a class="header" href="#memoization-in-vue">Memoization in Vue</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="custom-composition-functions"><a class="header" href="#custom-composition-functions">Custom Composition Functions</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="task-14"><a class="header" href="#task-14">Task</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vuejs-performance-optimization"><a class="header" href="#vuejs-performance-optimization">Vue.js Performance Optimization</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="optimizing-vue-applications"><a class="header" href="#optimizing-vue-applications">Optimizing Vue Applications</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="identifying-performance-bottlenecks"><a class="header" href="#identifying-performance-bottlenecks">Identifying Performance Bottlenecks</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="lazy-loading-components"><a class="header" href="#lazy-loading-components">Lazy Loading Components</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="built-in-vue-optimization-techniques"><a class="header" href="#built-in-vue-optimization-techniques">Built-in Vue Optimization Techniques</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="task-15"><a class="header" href="#task-15">Task</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

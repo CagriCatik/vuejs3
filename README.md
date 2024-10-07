@@ -4,9 +4,7 @@
   <img src="./image/vuejs.svg" alt="Vue.js Logo" width="200" height="200">
 </div>
 
-This project contains an in-depth and structured tutorial aimed at intermediate and advanced developers who want to master Vue.js 3 by exploring real-world applications, best practices, and performance optimization techniques. Each section is well-documented with practical examples and code snippets to guide your learning process.
-
-
+This [**mdBook**](https://cagricatik.github.io/vuejs3/) contains an in-depth and structured tutorial aimed at intermediate and advanced developers who want to master Vue.js 3 by exploring real-world applications, best practices, and performance optimization techniques. Each section is well-documented with practical examples and code snippets to guide your learning process.
 
 ## Table of Contents
 
@@ -35,12 +33,14 @@ This project contains an in-depth and structured tutorial aimed at intermediate 
 ## How to Use
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/your-username/vuejs3-tutorial.git
    ```
+
 2. Navigate to each section within the `docs/book/src/` directory for detailed explanations and code examples.
 3. Follow the instructions in each topic's `README.md` for hands-on practice and assignments.
 
 ## Contributing
 
-We welcome contributions! Please feel free to submit pull requests to enhance the tutorial series or correct any issues. 
+We welcome contributions! Please feel free to submit pull requests to enhance the tutorial series or correct any issues.

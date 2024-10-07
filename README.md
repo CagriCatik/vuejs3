@@ -35,7 +35,7 @@ This [**mdBook**](https://cagricatik.github.io/vuejs3/) contains an in-depth and
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/vuejs3-tutorial.git
+   git clone https://github.com/CagriCatik/vuejs3.git
    ```
 
 2. Navigate to each section within the `docs/book/src/` directory for detailed explanations and code examples.
@@ -43,4 +43,4 @@ This [**mdBook**](https://cagricatik.github.io/vuejs3/) contains an in-depth and
 
 ## Contributing
 
-We welcome contributions! Please feel free to submit pull requests to enhance the tutorial series or correct any issues.
+Please feel free to submit pull requests to enhance the tutorial series or correct any issues.
